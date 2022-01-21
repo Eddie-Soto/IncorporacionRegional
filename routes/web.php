@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('profile/per/states','SignupRegionalController@states');
+Route::get('profile/per/municipality','SignupRegionalController@municipality');
+Route::get('profile/per/ciudad','SignupRegionalController@ciudad');
+
+Route::get('/index', 'SignupRegionalController@index');
+
+Route::get('/profile/mex', 'SignupRegionalController@mexico');
+
+Route::get('/profile/per', 'SignupRegionalController@peru');
