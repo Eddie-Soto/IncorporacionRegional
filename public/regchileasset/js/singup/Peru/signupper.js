@@ -169,7 +169,7 @@ function getStates(){
   var country = $('#country').val();
   $.ajax({
     type: "GET",
-    url: URLactual + '/states',
+    url: URLactual + 'states',
     dataType: "json",
     data: {
       getstate: country
