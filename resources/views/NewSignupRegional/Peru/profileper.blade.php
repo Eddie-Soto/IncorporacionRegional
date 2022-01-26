@@ -1,3 +1,4 @@
+
 @extends('NewSignupRegional.layout')
 
 @section('title', 'Registro')

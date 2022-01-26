@@ -174,7 +174,7 @@
 <script src="{{asset('regchileasset/plugins/sweetalerts/sweetalert2.min.js')}}"></script>
 <script src="{{asset('regchileasset/plugins/sweetalerts/custom-sweetalert.js')}}"></script>
 <script src="{{asset('regchileasset/js/jquery-ui.js')}}"></script>
-<script src="{{asset('regchileasset/js/validations.js?v=3.5')}}"></script>
+
 
 <script src="{{asset('regchileasset/js/jquery.validate.js')}}"></script>
 
@@ -198,7 +198,7 @@
          $('.menu-reg').css('display', 'block');
          $('.count-down').css('display', 'none');
      </script>
-     <script src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=0.1') }} "></script>
+     
      <!--script>
         $('.wbn-datepicker').datepicker()
     </script-->

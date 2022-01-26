@@ -23,9 +23,21 @@
             <option value="">{{ __('auth.selbankname') }}</option>
         </select>
     </div>
+
+    <div class="col-md-6" id="">
+        <label for="bank_name"> <b>TIPO DE CUENTA</b></label>
+        <select id="bank_name" name="bank_name" class="form-control">
+            <option value="">{{ __('auth.selbankname') }}</option>
+        </select>
+    </div>
     
     <div class="col-md-6">
         <label for="number_account"><span style="color: red !important;">*</span> <b>{{ __('auth.number_account') }}</b></label>
+        <input type="text" id="number_account" name="number_account" class="form-control">
+    </div>
+
+    <div class="col-md-6">
+        <label for="number_account"><span style="color: red !important;">*</span> <b>CCI:</b></label>
         <input type="text" id="number_account" name="number_account" class="form-control">
     </div>
 
@@ -52,13 +64,13 @@
 <div class="row" id="check_coti" hidden="true">
 
     <div class="col-md-12">
-        <label for="name_cotitular"><span style="color: red !important;">*</span> <b>{{ __('auth.name_cotitular') }}</b></label>
+        <label for="name_cotitular"><span style="color: red !important;">*</span> <b>Apellidos y Nombres Completos del Cotitular</b></label>
         <input type="text" id="name_cotitular" name="name_cotitular" class="form-control">
     </div>
 
 
     <div class="col-md-12">
-        <label for="rut_cotitular"><span style="color: red !important;">*</span> <b>{{ __('auth.rut_cotitular') }}</b></label>
+        <label for="rut_cotitular"><span style="color: red !important;">*</span> <b>DNI:</b></label>
         <input type="text" id="rut_cotitular" name="rut_cotitular" class="form-control">
     </div>
 

@@ -1,9 +1,152 @@
 var URLactual = window.location;
 $( document ).ready(function() {
-  
+
   getStates();
         //document.getElementById("btnProfile").disabled = true;
       });
+
+
+/**
+* Función que muestra los campos del cotitular si lo desea
+*/
+function check_cotitular(){
+  if($("input[id='info_cotitular']").is(':checked')){
+    document.getElementById('check_coti').setAttribute('hidden',true);
+    document.getElementById('check_coti').removeAttribute('hidden',true);
+  }
+  else if(!$("input[id='info_cotitular']").is(':checked')){
+    document.getElementById('check_coti').setAttribute('hidden',true);
+    document.getElementById('name_cotitular').value="";
+    document.getElementById('rut_cotitular').value="";
+
+  }
+
+}
+
+/**
+* Función que muestra los campos del banco si lo desea
+*/
+function check_bank(){
+  if($("input[id='info_bank']").is(':checked')){
+    document.getElementById('check_bank').setAttribute('hidden',true);
+    document.getElementById('check_bank').removeAttribute('hidden',true);
+  }
+  else if(!$("input[id='info_bank']").is(':checked')){
+    document.getElementById('check_bank').setAttribute('hidden',true);
+    document.getElementById('bank_name').value="";
+    document.getElementById('type_acount').value="";
+    document.getElementById('number_account').value="";
+
+  }
+
+}
+
+function type_person(value){
+  if(value == "1") //persona natural
+  {
+    document.getElementById('socio_econ').value="Sin inicio de actividades";
+     // document.getElementById('socio_econ').setAttribute('disabled',true); 
+     /* Cambia el texto de el campo nombre titular si selecciona persona natural */
+     document.getElementById('r_soc').removeAttribute('hidden',true);
+     document.getElementById('r_soc').setAttribute('hidden',true);
+     document.getElementById('jur').removeAttribute('hidden',true);
+     document.getElementById('jur1').removeAttribute('hidden',true);
+
+     /* Cambia el texto de el campo cel titular si selecciona persona natural */
+     document.getElementById('cel_juridica').removeAttribute('hidden',true);
+     document.getElementById('cel_juridica').setAttribute('hidden',true);
+     document.getElementById('cel_natural').removeAttribute('hidden',true);
+
+     /* Cambia el texto de el rut  si selecciona persona natural */
+     document.getElementById('rut_juridica').removeAttribute('hidden',true);
+     document.getElementById('rut_juridica').setAttribute('hidden',true);
+     document.getElementById('rut_natural').removeAttribute('hidden',true);
+
+     /* Muestra el campo gender si selecciona persona juridica */
+     //document.getElementById('gender').removeAttribute('hidden',true);
+    // div_Cambiar_size_input = document.getElementById('mail');
+    // div_Cambiar_size_input.classList.remove('col-md-12');
+    // div_Cambiar_size_input.className += " col-md-6";
+
+    document.getElementById('name_titular_two_div').removeAttribute('hidden',true);
+    document.getElementById('name_titular_two_div').setAttribute('hidden',true);
+
+
+    /*UPLOAD FILES*/
+    document.getElementById('personanatural').removeAttribute('hidden',true);
+    document.getElementById('personajuridica').setAttribute('hidden',true);
+  }
+   else if(value=="2"){ //persona natural con actividades
+     // document.getElementById('socio_econ').removeAttribute('disabled',true); 
+     document.getElementById('socio_econ').value="";
+     /* Cambia el texto de el campo nombre titular si selecciona persona natural */
+     document.getElementById('r_soc').removeAttribute('hidden',true);
+     document.getElementById('r_soc').setAttribute('hidden',true);
+     document.getElementById('jur').removeAttribute('hidden',true);
+     document.getElementById('jur1').removeAttribute('hidden',true);
+
+     /* Cambia el texto de el campo cel titular si selecciona persona natural */
+     document.getElementById('cel_juridica').removeAttribute('hidden',true);
+     document.getElementById('cel_juridica').setAttribute('hidden',true);
+     document.getElementById('cel_natural').removeAttribute('hidden',true);
+
+     /* Cambia el texto de el rut  si selecciona persona natural */
+     document.getElementById('rut_juridica').removeAttribute('hidden',true);
+     document.getElementById('rut_juridica').setAttribute('hidden',true);
+     document.getElementById('rut_natural').removeAttribute('hidden',true);
+
+     /* Muestra el campo gender si selecciona persona juridica */
+     //document.getElementById('gender').removeAttribute('hidden',true);
+     //div_Cambiar_size_input = document.getElementById('mail');
+     //div_Cambiar_size_input.classList.remove('col-md-12');
+     //div_Cambiar_size_input.className += " col-md-6";
+
+     document.getElementById('name_titular_two_div').removeAttribute('hidden',true);
+     document.getElementById('name_titular_two_div').setAttribute('hidden',true);
+
+     document.getElementById('personanatural').removeAttribute('hidden',true);
+     document.getElementById('personajuridica').setAttribute('hidden',true);
+   }
+   else if(value == "0") //persona Juridica
+   {
+    document.getElementById('socio_econ').removeAttribute('disabled',true); 
+    document.getElementById('socio_econ').value="";
+    /* Cambia el texto de el campo nombre titular si selecciona persona juridica */
+    document.getElementById('jur').removeAttribute('hidden',true);
+    document.getElementById('jur').setAttribute('hidden',true);
+    document.getElementById('jur1').removeAttribute('hidden',true);
+    document.getElementById('jur1').setAttribute('hidden',true);
+    document.getElementById('r_soc').removeAttribute('hidden',true);
+
+    /* Cambia el texto de el campo cel titular si selecciona persona juridica */
+    document.getElementById('cel_natural').removeAttribute('hidden',true);
+    document.getElementById('cel_natural').setAttribute('hidden',true);
+    document.getElementById('cel_juridica').removeAttribute('hidden',true);
+
+    /* Cambia el texto de el rut  si selecciona persona juridica */
+    document.getElementById('rut_natural').removeAttribute('hidden',true);
+    document.getElementById('rut_natural').setAttribute('hidden',true);
+    document.getElementById('rut_juridica').removeAttribute('hidden',true);
+
+    /* Oculta el campo gender si selecciona persona juridica */
+    //document.getElementById('gender').removeAttribute('hidden',true);
+   // document.getElementById('gender').setAttribute('hidden',true);
+
+   /*Si oculta el campo genero hace mas grande el campo email */
+    //div_Cambiar_size_input = document.getElementById('mail');
+    //div_Cambiar_size_input.classList.remove('col-md-12');
+    //div_Cambiar_size_input.className += " col-md-12";
+
+    /* Oculta el campo gender si selecciona persona juridica */
+    document.getElementById('name_titular_two_div').removeAttribute('hidden',true);
+
+
+    document.getElementById('personajuridica').removeAttribute('hidden',true);
+    document.getElementById('personanatural').setAttribute('hidden',true);
+  }
+}
+
+
 /**
 * Función que muestra los campos dependiendo el tipo de incorporación
 */
@@ -58,59 +201,59 @@ function showShirtSample(){
      var imgSample = "";
      if(item == ""){
       divSample.innerHTML="";
-        }else{
+    }else{
      divSample.innerHTML = "<br><img class='img-thumbnail' src='../../regchileasset/img/playera.png' width='100%' name='shirt-sample'>";
-        }
+   }
        // divSample.innerHTML = "<br><img src='../../regchileasset/img/f.png' width='100%' name='shirt-sample'>";
-}
+     }
 
-function getDataShirt(){
+     function getDataShirt(){
     //  var country = document.getElementById('country').value;
     var kit = document.getElementById('kit').value;
     var gender = document.getElementById('gender1').value;
     //var gender= $('#gender1').val();
     //alert(gender);
     playeras(gender, kit);
-}
+  }
 
 /**
 * Función que Valida la fecha de nacimiento
 */
-  function validate_birthdate(value){
-    
-    var res = value.split("-");
-    if( res[0]=="undefinied" || res[1]=="undefinied" || res[2]=="undefinied" || /_/.test(res[0]) || /_/.test(res[1]) || /_/.test(res[2]) )
-    {
-        swal({
-            title: 'Error',
-            text: completeDate,
-            type: 'error',
-            padding: '2em'
-        })
-    }
-    res[0];
-    res[1];
-    res[2];
-    var day = res[0];
-    var month = res[1];
-    var year = res[2]
-    var age =  18;
+function validate_birthdate(value){
 
-    var mydate = new Date();
-    mydate.setFullYear(year, month-1, day);
+  var res = value.split("-");
+  if( res[0]=="undefinied" || res[1]=="undefinied" || res[2]=="undefinied" || /_/.test(res[0]) || /_/.test(res[1]) || /_/.test(res[2]) )
+  {
+    swal({
+      title: 'Error',
+      text: completeDate,
+      type: 'error',
+      padding: '2em'
+    })
+  }
+  res[0];
+  res[1];
+  res[2];
+  var day = res[0];
+  var month = res[1];
+  var year = res[2]
+  var age =  18;
 
-    var currdate = new Date();
-    currdate.setFullYear(currdate.getFullYear() - age);
+  var mydate = new Date();
+  mydate.setFullYear(year, month-1, day);
 
-    if(currdate < mydate)
-    {
-        swal({
-            title: 'Error',
-            text: alertHeigtAge,
-            type: 'error',
-            padding: '2em'
-        })
-    }
+  var currdate = new Date();
+  currdate.setFullYear(currdate.getFullYear() - age);
+
+  if(currdate < mydate)
+  {
+    swal({
+      title: 'Error',
+      text: alertHeigtAge,
+      type: 'error',
+      padding: '2em'
+    })
+  }
 }
 
 /**
@@ -133,29 +276,29 @@ function validateMail(){
             if (respuesta==1) {
                  // document.getElementById("btnProfile").disabled s= false;
                }else if(respuesta == 2){
-                  swal({
-                      title: 'Error',
-                      text: 'El correo ya se encuentar registrado en la Tienda Virtual',
-                      type: 'error',
-                      padding: '2em'
-                  })
-                  document.getElementById("email").value="";
-               }
-               else if(respuesta==0){
+                swal({
+                  title: 'Error',
+                  text: 'El correo ya se encuentar registrado en la Tienda Virtual',
+                  type: 'error',
+                  padding: '2em'
+                })
+                document.getElementById("email").value="";
+              }
+              else if(respuesta==0){
 
-                  swal({
-                      title: 'Error',
-                      text: alertDuplicateMail,
-                      type: 'error',
-                      padding: '2em'
-                  })
-                  document.getElementById("email").value="";
+                swal({
+                  title: 'Error',
+                  text: alertDuplicateMail,
+                  type: 'error',
+                  padding: '2em'
+                })
+                document.getElementById("email").value="";
 
 
 
-                  }
-                }
-              });
+              }
+            }
+          });
   }
 }
 
@@ -169,7 +312,7 @@ function getStates(){
   var country = $('#country').val();
   $.ajax({
     type: "GET",
-    url: URLactual + 'states',
+    url: URLactual + '/states',
     dataType: "json",
     data: {
       getstate: country
@@ -195,7 +338,7 @@ function getStates(){
 * Función que Obtiene las Estados de Perú
 */
 function getCities(){
-        var regi = $('#region').val();
+  var regi = $('#region').val();
 
        // var regi = regis.replace("'", "apost");
         //string.replace(searchvalue, newvalue)
@@ -222,13 +365,13 @@ function getCities(){
 
          }
        });
-}
+      }
 
 /**
 * Función que Obtiene las Ciudades de Perú
 */
 function getCiudades(){
-        var ciudades = $('#ciudad').val();
+  var ciudades = $('#ciudad').val();
 
        // var regi = regis.replace("'", "apost");
         //string.replace(searchvalue, newvalue)
@@ -254,24 +397,24 @@ function getCiudades(){
         error: function(data) {
 
         }
-        });
-}
+      });
+      }
 /**
 * Función que Valida la extención y el tamaño de los archivos
 */
 function ValidateExtension(file){
-        var ext = file.split('.').pop();
-          if (file != '') {
-            if(ext == "pdf" || ext == "png" || ext == "jpg" || ext == "jpeg" || ext == "heic"){
-              alert("La extensión es: " + ext);
-              if(file[0].files[0].size > 1048576){
-                swal({
-                              title: 'Error',
-                              text: 'El archivo exede el tamaño permitido',
-                              type: 'error',
-                              padding: '2em'
-                          })
-                          document.getElementById("fileone").value="";
+  var ext = file.split('.').pop();
+  if (file != '') {
+    if(ext == "pdf" || ext == "png" || ext == "jpg" || ext == "jpeg" || ext == "heic"){
+      alert("La extensión es: " + ext);
+      if(file[0].files[0].size > 1048576){
+        swal({
+          title: 'Error',
+          text: 'El archivo exede el tamaño permitido',
+          type: 'error',
+          padding: '2em'
+        })
+        document.getElementById("fileone").value="";
                 /*$('#modal-title').text('¡Precaución!');
                 $('#modal-msg').html("Se solicita un archivo no mayor a 1MB. Por favor verifica.");
                 $("#modal-gral").modal();    */       
@@ -283,16 +426,16 @@ function ValidateExtension(file){
             else
             {
               //file.val('');
-               swal({
-                              title: 'Error',
-                              text: 'La extencion de tu archivo no esta permitida',
-                              type: 'error',
-                              padding: '2em'
-                          })
-                          limpiar();
+              swal({
+                title: 'Error',
+                text: 'La extencion de tu archivo no esta permitida',
+                type: 'error',
+                padding: '2em'
+              })
+              limpiar();
             }
           }
-}
+        }
 
 /**
 * Función que hace una opacidad en los tipos de sponsor
@@ -330,12 +473,12 @@ function Opacity_type_sponsor(value)
         document.getElementById("code-sponsor-validate").value = "0";
 
       }
-}
+    }
 /**
 * Función Valida el sponsor sea correcto
 */
 function CodeBien(){
-    var codigo = document.getElementById("code-sponsor").value;
+  var codigo = document.getElementById("code-sponsor").value;
         //alert(codigo);
         $.ajax({
           type: "GET",
@@ -357,7 +500,7 @@ function CodeBien(){
 
        });
 
-}
+      }
 
 /**
 * Función que busca el sponsor
@@ -438,13 +581,13 @@ function Search_sponsor(value){
 * Función que Valida el sponsor
 */
 function Validate_sponsor_exist(){
-    var sponsorexist = document.getElementById("code-sponsor-validate").value;
+  var sponsorexist = document.getElementById("code-sponsor-validate").value;
     //alert(sponsorexist);
     if(sponsorexist == ""){
        // alert('Digita un sponsor valido');
-        document.getElementById("code-sponsor").value="";
-    }
-}
+       document.getElementById("code-sponsor").value="";
+     }
+   }
 
 /**
 * Función que Valida el radio que esta seleccionado
