@@ -136,7 +136,7 @@
 <div class="row" >
  <div class="col-md-12" id="kits-cb" hidden="true">
      <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
-     <select class="form-control" name="kit-cb" id="kit-cb" onchange="Ocultar_playeras()">
+     <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras()">
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD</option>
         <option value="5032" >5032 KIT APARTADO</option>
@@ -180,18 +180,18 @@
 
 
 <div class="row">
-    <div class="col-md-12" id="jur">
-        <label for="name_titular"><span style="color: red !important;">*</span> <b>NOMBRE(S) DEL TITULAR:</b></label>
+    <div class="col-md-12" id="namenat">
+        <label for="name"><span style="color: red !important;">*</span> <b>NOMBRE(S) DEL TITULAR:</b></label>
         <input type="text" id="name_titular" name="name_titular" class="form-control">
     </div>
-    <div class="col-md-12" id="jur1">
-        <label for="name_titular_ape"><span style="color: red !important;">*</span> <b>APELLIDO(S) DEL TITULAR:</b></label>
-        <input type="text" id="name_titular_ape" name="name_titular_ape" class="form-control">
+    <div class="col-md-12" id="apenat">
+        <label for="apename"><span style="color: red !important;">*</span> <b>APELLIDO(S) DEL TITULAR:</b></label>
+        <input type="text" id="apename" name="apename" class="form-control">
     </div>
 
-    <div class="col-md-12" hidden="true" id="r_soc">
-        <label for="name_titular_jur"><span style="color: red !important;">*</span> <b>NOMBRE DE LA EMPRESA:</b></label>
-        <input type="text" id="name_titular_jur" name="name_titular_jur" class="form-control">
+    <div class="col-md-12" hidden="true" id="empname">
+        <label for="namelegarrepresentative"><span style="color: red !important;">*</span> <b>NOMBRE DE LA EMPRESA:</b></label>
+        <input type="text" id="namelegarrepresentative" name="namelegarrepresentative" class="form-control">
     </div>
 </div>
 
@@ -222,21 +222,21 @@
 <div class="row">
 
     <div class="col-md-3">
-        <label for="region"><span style="color: red !important;">*</span> <b>Departamento:</b></label>
-        <select id="region"  name="region" class="form-control" onchange="getCities()">
+        <label for="state"><span style="color: red !important;">*</span> <b>Departamento:</b></label>
+        <select id="state"  name="state" class="form-control" onchange="getCities()">
            {{-- <option value="" selected>{{ __('auth.selreg') }}</option>--}}
        </select>
    </div>
 
    <div class="col-md-3">
-      <label for="ciudad"><span style="color: red !important;">*</span> <b>Provincia:</b></label>
-      <select id="ciudad" name="ciudad" class="form-control" onchange="getCiudades()">
+      <label for="city"><span style="color: red !important;">*</span> <b>Provincia:</b></label>
+      <select id="city" name="city" class="form-control" onchange="getCiudades()">
        {{-- <option value="" selected>{{ __('auth.selreg') }}</option>--}}
    </select>
 </div>
 <div class="col-md-3">
-    <label for="comuna"><span style="color: red !important;">*</span> <b>Distrito:</b> </label>
-    <select id="comuna" name="comuna" class="form-control">
+    <label for="colony"><span style="color: red !important;">*</span> <b>Distrito:</b> </label>
+    <select id="colony" name="colony" class="form-control">
         {{--<option value="" selected="">{{ __('auth.selreg') }}</option>--}}
     </select>
 </div>
@@ -273,12 +273,12 @@
     </select>
 </div>
 <div class="col-md-6" id="rut_natural">
-    <label for="rut_nat"><span style="color: red !important;">*</span> <b>Número de Documento</b></label>
-    <input type="text" id="rut_nat" name="rut_nat" onblur="isValidRUT()" class="form-control">
+    <label for="numberdocument"><span style="color: red !important;">*</span> <b>Número de Documento</b></label>
+    <input type="text" id="numberdocument" name="numberdocument" onblur="isValidRUT()" class="form-control">
 </div>
 <div class="col-md-12" id="namelegalperson">
     <label for="name-legal-representative"><span style="color: red !important;">*</span> <b>Apellidos y Nombres Completos del Representate Legal</b></label>
-    <input type="text" id="namname-legal-name-legal-representative" name="name-legal-representative"  class="form-control">
+    <input type="text" id="name-legal-representative" name="name-legal-representative"  class="form-control">
 </div>
 
 
@@ -466,7 +466,7 @@
 </form>
 
 
-<script src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=0.1') }} "></script>
+<script src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=0.2') }} "></script>
 <script src="{{asset('regchileasset/js/singup/Peru/validationsper.js?v=0.1')}}"></script>
 <script type="text/javascript">
 

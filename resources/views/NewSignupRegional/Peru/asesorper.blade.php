@@ -70,8 +70,8 @@
 
 
     <div class="col-md-12">
-        <label for="rut_cotitular"><span style="color: red !important;">*</span> <b>DNI:</b></label>
-        <input type="text" id="rut_cotitular" name="rut_cotitular" class="form-control">
+        <label for="numer_document_cotitular"><span style="color: red !important;">*</span> <b>DNI:</b></label>
+        <input type="text" id="numer_document_cotitular" name="numer_document_cotitular" class="form-control">
     </div>
 
 </div>

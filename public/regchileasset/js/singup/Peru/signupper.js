@@ -44,7 +44,7 @@ function check_bank(){
 function type_person(value){
   if(value == "1") //persona natural
   {
-    document.getElementById('socio_econ').value="Sin inicio de actividades";
+    
      // document.getElementById('socio_econ').setAttribute('disabled',true); 
      /* Cambia el texto de el campo nombre titular si selecciona persona natural */
      document.getElementById('r_soc').removeAttribute('hidden',true);
@@ -78,7 +78,7 @@ function type_person(value){
   }
    else if(value=="2"){ //persona natural con actividades
      // document.getElementById('socio_econ').removeAttribute('disabled',true); 
-     document.getElementById('socio_econ').value="";
+     
      /* Cambia el texto de el campo nombre titular si selecciona persona natural */
      document.getElementById('r_soc').removeAttribute('hidden',true);
      document.getElementById('r_soc').setAttribute('hidden',true);
