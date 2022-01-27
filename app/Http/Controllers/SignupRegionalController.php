@@ -181,7 +181,7 @@ class SignupRegionalController extends Controller
         /**
     * Función que consulta el nombre de los bancos para ser mostrados en la vista
     */
-        public function getbanks(Request $request){
+    public function getbanks(Request $request){
         	$pais=$request->pais;
 
         	$conection = \DB::connection('mysql_las');
@@ -421,5 +421,7 @@ public function storePeru(Request $request){
 	$signupfiles = $conection->select("INSERT INTO  nikkenla_incorporation.signupfiles (sap_code,name,filepath,country_id,created_at) VALUES ('$completecode','$titular_name','$urlscompletes','10','$creacion')");
 
 	\DB::disconnect('mysql_las');
+
+}
 
 }
