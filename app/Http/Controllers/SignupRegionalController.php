@@ -34,7 +34,7 @@ class SignupRegionalController extends Controller
 
     	\DB::disconnect('mysql_las');
 
-    	return $playeras;
+    	return $typedocuments;
 	}
 
 	public function municipality(Request $request){
