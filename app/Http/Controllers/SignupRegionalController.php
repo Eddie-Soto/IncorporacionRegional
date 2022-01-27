@@ -30,7 +30,7 @@ class SignupRegionalController extends Controller
 	public function gettypeDocuments(){
 		$conection = \DB::connection('mysql_las');
 
-    	$typedocuments = $conection->select("SELECT id_type, name nikkenla_incorporation.type_documents FROM type_documents where type = 1 and country = 3 order by name ASC ");
+    	$typedocuments = $conection->select("SELECT id_type, name FROM nikkenla_incorporation.type_documents where type = 1 and country = 3 order by name ASC ");
 
     	\DB::disconnect('mysql_las');
 
