@@ -35,6 +35,31 @@ function getDocuments(){
       });
       }
 
+      function type_person(value){
+  if(value == "1") //persona natural
+  {
+
+     // document.getElementById('socio_econ').setAttribute('disabled',true); 
+     /* Cambia el texto de el campo nombre titular si selecciona persona natural */
+     document.getElementById('namenat').removeAttribute('hidden',true);
+     document.getElementById('apenat').removeAttribute('hidden',true);
+     document.getElementById('empname').setAttribute('hidden',true);
+     
+
+   }
+   else if(value=="2"){ //persona natural con actividades
+     document.getElementById('namenat').removeAttribute('hidden',true);
+     document.getElementById('apenat').removeAttribute('hidden',true);
+     document.getElementById('empname').setAttribute('hidden',true);
+   }
+   else if(value == "0") //persona Juridica
+   {
+    document.getElementById('namenat').setAttribute('hidden',true);
+     document.getElementById('apenat').setAttribute('hidden',true);
+     document.getElementById('empname').removeAttribute('hidden',true);
+  }
+}
+
 
 
 $( document ).ready(function() {
