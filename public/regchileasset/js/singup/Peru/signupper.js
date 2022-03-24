@@ -1,12 +1,45 @@
 var URLactual = window.location;
 
 /**
+* Función que Obtiene las Estados de Perú
+*/
+function getCities(){
+  var regi = $('#region').val();
+  var country = $('#country').val();
+
+       // var regi = regis.replace("'", "apost");
+        //string.replace(searchvalue, newvalue)
+        $.ajax({
+          type: "GET",
+          url: '/municipality',
+          dataType: "json",
+          contentType: "text/json; charset=UTF-8",
+          data: {
+            reg: regi,
+            country: country
+          },
+          success: function(data){
+            $("#city").find('option').remove();
+            $("#city").append('<option value="" selected>Selecciona una opción</option>');
+           // $("#region").append('<option value="" selected>selecciona una opcion</option>');
+           // $("#comuna").append('<option value="" selected>selecciona una opcion</option>');
+           $("#colony").append('<option value="" selected>Selecciona una opción</option>');
+           $.each(data,function(key, registro) {
+
+            $("#city").append('<option value='+registro.province_name.replace(/ /g, "%")+'>'+registro.province_name+'</option>');
+          });
+         },
+         error: function(data) {
+
+         }
+       });
+      }
+
+/**
 * Función que obtiene los estados 
 */
 /*CHILE CHANGUE CIUDAD*/
 function getStates(){
-
-
   var country = $('#country').val();
   $.ajax({
     type: "GET",

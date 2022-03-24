@@ -35,7 +35,7 @@ class SignupRegionalController extends Controller
 		
 		$conection = \DB::connection('mysql_las');
 
-    	$typedocuments = $conection->select("SELECT id_type, name FROM nikkenla_incorporation.type_documents where type = '$type_person' and country = 3 order by name ASC ");
+    	$typedocuments = $conection->select("SELECT id_type, name FROM nikkenla_incorporation.type_documents where type = '$type_person' and country = '$country' order by name ASC ");
 
     	\DB::disconnect('mysql_las');
 
@@ -44,6 +44,7 @@ class SignupRegionalController extends Controller
 
 	public function municipality(Request $request){
 		$state= str_replace("%", " ", $request->reg);
+		$country=$request->country;
 		try {
 
 
@@ -54,7 +55,7 @@ class SignupRegionalController extends Controller
 			->select('province_name as province_name')
 			->where('state_name','=', $state)
 			->distinct('state_name')
-			->where('pais','=', 3)
+			->where('pais','=', $country)
 			->orderBy('province_name', 'ASC')
 			->get();
 
