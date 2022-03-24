@@ -20,13 +20,13 @@ var country = $('#country').val();
           },
           success: function(data){
             $("#typedocument").find('option').remove();
-            $("#typedocument").append('<option value="" selected>'+selreg+'</option>');
+            $("#typedocument").append('<option value="" selected>Selecciona tipo de documento</option>');
          //   $("#region").append('<option value="" selected>selecciona una opcion</option>');
            // $("#comuna").append('<option value="" selected>selecciona una opcion</option>');
           //  $("#ciudad").append('<option value="" selected>selecciona una opcion</option>');
           $.each(data,function(key, registro) {
 
-            $("#comuna").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
+            $("#typedocument").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
           });
         },
         error: function(data) {
