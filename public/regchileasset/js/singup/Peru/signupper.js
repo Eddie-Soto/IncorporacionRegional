@@ -626,7 +626,7 @@ function SponsorRadio(){
   document.getElementById("opc1").checked=true;
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
  // getStates();
   getDocuments();
