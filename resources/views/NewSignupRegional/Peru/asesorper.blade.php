@@ -44,7 +44,7 @@
 </div>
 
 <br>
-<div class="row" align="center">
+<div class="row" align="center" id="cotitularoptions">
     <div class="col-lg-12">
         <div class="alert alert-dismissible fade show" role="alert" style="color: #fff; background-color: #A2DADA !important;border-color: #A2DADA !important;">
             <strong>

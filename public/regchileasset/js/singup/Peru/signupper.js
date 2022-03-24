@@ -45,6 +45,8 @@ function getTypePerson(value){
      document.getElementById('apenat').removeAttribute('hidden',true);
      document.getElementById('empname').setAttribute('hidden',true);
      document.getElementById('namelegalperson').setAttribute('hidden',true);
+     document.getElementById('cotitularoptions').removeAttribute('hidden',true);
+     
      
 
    }
@@ -53,6 +55,7 @@ function getTypePerson(value){
      document.getElementById('apenat').removeAttribute('hidden',true);
      document.getElementById('empname').setAttribute('hidden',true);
      document.getElementById('namelegalperson').setAttribute('hidden',true);
+     document.getElementById('cotitularoptions').removeAttribute('hidden',true);
    }
    else if(value == "0") //persona Juridica
    {
@@ -60,6 +63,7 @@ function getTypePerson(value){
     document.getElementById('apenat').setAttribute('hidden',true);
     document.getElementById('empname').removeAttribute('hidden',true);
     document.getElementById('namelegalperson').removeAttribute('hidden',true);
+    document.getElementById('cotitularoptions').setAttribute('hidden',true);
 
   }
 }
