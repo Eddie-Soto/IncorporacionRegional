@@ -230,7 +230,7 @@
 
    <div class="col-md-3">
       <label for="city"><span style="color: red !important;">*</span> <b>Provincia:</b></label>
-      <select id="city" name="city" class="form-control" onchange="getCiudades()">
+      <select id="city" name="city" class="form-control" onchange="getColony()">
        {{-- <option value="" selected>{{ __('auth.selreg') }}</option>--}}
    </select>
 </div>

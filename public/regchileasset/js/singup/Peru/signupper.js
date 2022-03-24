@@ -1,4 +1,38 @@
 var URLactual = window.location;
+/**
+* Función que Obtiene las Ciudades de Perú
+*/
+function getColony(){
+  var ciudades = $('#ciudad').val();
+  var country = $('#country').val();
+
+       // var regi = regis.replace("'", "apost");
+        //string.replace(searchvalue, newvalue)
+        $.ajax({
+          type: "GET",
+          url: '/ciudad',
+          dataType: "json",
+          contentType: "text/json; charset=UTF-8",
+          data: {
+            ciudad: ciudades,
+            country: country
+          },
+          success: function(data){
+            $("#colony").find('option').remove();
+            $("#colony").append('<option value="" selected>Selecciona una opción</option>');
+         //   $("#region").append('<option value="" selected>selecciona una opcion</option>');
+           // $("#comuna").append('<option value="" selected>selecciona una opcion</option>');
+          //  $("#ciudad").append('<option value="" selected>selecciona una opcion</option>');
+          $.each(data,function(key, registro) {
+
+            $("#colony").append('<option value='+registro.colony_name.replace(/ /g, "%")+'>'+registro.colony_name+'</option>');
+          });
+        },
+        error: function(data) {
+
+        }
+      });
+      }
 
 /**
 * Función que Obtiene las Estados de Perú
