@@ -1,10 +1,5 @@
 var URLactual = window.location;
-$( document ).ready(function() {
 
-  getStates();
-  getDocuments();
-        //document.getElementById("btnProfile").disabled = true;
-      });
 
 /**
 * Función que Obtiene las tipos de docuemnto de Perú
@@ -630,3 +625,10 @@ function Validate_sponsor_exist(){
 function SponsorRadio(){
   document.getElementById("opc1").checked=true;
 }
+
+$( document ).ready(function() {
+
+ // getStates();
+  getDocuments();
+        //document.getElementById("btnProfile").disabled = true;
+      });
