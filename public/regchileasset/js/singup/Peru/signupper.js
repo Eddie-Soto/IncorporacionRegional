@@ -40,6 +40,6 @@ function getDocuments(){
 $( document ).ready(function() {
 
  // getStates();
-  getDocuments();
+  
         //document.getElementById("btnProfile").disabled = true;
       });
