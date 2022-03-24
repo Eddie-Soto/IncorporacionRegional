@@ -5,13 +5,13 @@ var URLactual = window.location;
 */
 function check_cotitular(){
   if($("input[id='info_cotitular']").is(':checked')){
-    document.getElementById('check_coti').setAttribute('hidden',true);
+    //document.getElementById('check_coti').setAttribute('hidden',true);
     document.getElementById('check_coti').removeAttribute('hidden',true);
   }
   else if(!$("input[id='info_cotitular']").is(':checked')){
     document.getElementById('check_coti').setAttribute('hidden',true);
     document.getElementById('name_cotitular').value="";
-    document.getElementById('rut_cotitular').value="";
+    
 
   }
 
