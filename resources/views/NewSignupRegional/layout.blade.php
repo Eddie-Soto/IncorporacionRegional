@@ -167,8 +167,8 @@
     </div>
     <br>
 </body>
-<!--script src="{{asset('regchileasset/js/jquery-3.1.1.min.js')}}"></script-->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script language="JavaScript" type="text/javascript" src="{{asset('regchileasset/js/jquery-3.1.1.min.js')}}"></script>
+
 <script src="{{asset('regchileasset/js/popper.min.js')}}"></script>
 <script src="{{asset('regchileasset/js/bootstrap.min.js')}}"></script>
 
