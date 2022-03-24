@@ -27,10 +27,15 @@ class SignupRegionalController extends Controller
 		return view('NewSignupRegional.Peru.profileper');
 	}
 
-	public function gettypeDocuments(){
+	public function gettypeDocuments(Request $request){
+		$type_person=$request->type_person;
+		$country=$request->country;
+
+
+		
 		$conection = \DB::connection('mysql_las');
 
-    	$typedocuments = $conection->select("SELECT id_type, name FROM nikkenla_incorporation.type_documents where type = 1 and country = 3 order by name ASC ");
+    	$typedocuments = $conection->select("SELECT id_type, name FROM nikkenla_incorporation.type_documents where type = '$type_person' and country = 3 order by name ASC ");
 
     	\DB::disconnect('mysql_las');
 

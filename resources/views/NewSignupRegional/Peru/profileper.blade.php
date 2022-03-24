@@ -264,12 +264,11 @@
 </div-->
 
 <div class="row">
-    <div class="col-md-6" id="typedocument">
+    <div class="col-md-6" id="typedocuments">
       <label for="typedocument"><span style="color: red !important;">*</span> <b>Tipo de Documento:</b></label>
-      <select id="typedocument" name="typedocument" class="form-control" onchange="getDataShirt()">
+      <select id="typedocument" name="typedocument" class="form-control" >
         <option value="">Selecciona Tu Documento</option>
-        <option value="10">DNI</option>
-        <option value="23">RUC</option>
+        
     </select>
 </div>
 <div class="col-md-6" id="rut_natural">
@@ -466,8 +465,8 @@
 </form>
 
 
-<script src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=0.2') }} "></script>
-<script src="{{asset('regchileasset/js/singup/Peru/validationsper.js?v=0.1')}}"></script>
+<script src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=1.0') }} "></script>
+<script src="{{asset('regchileasset/js/singup/Peru/validationsper.js?v=1.0')}}"></script>
 <script type="text/javascript">
 
 /**
