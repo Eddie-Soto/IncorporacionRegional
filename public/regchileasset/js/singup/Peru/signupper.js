@@ -1,6 +1,24 @@
 var URLactual = window.location;
 
 /**
+* Función que muestra los campos del banco si lo desea
+*/
+function check_bank(){
+  if($("input[id='info_bank']").is(':checked')){
+    document.getElementById('check_bank').setAttribute('hidden',true);
+    document.getElementById('check_bank').removeAttribute('hidden',true);
+  }
+  else if(!$("input[id='info_bank']").is(':checked')){
+    document.getElementById('check_bank').setAttribute('hidden',true);
+    document.getElementById('bank_name').value="";
+    document.getElementById('type_acount').value="";
+    document.getElementById('number_account').value="";
+
+  }
+
+}
+
+/**
 * Función que muestra los campos del cotitular si lo desea
 */
 function check_cotitular(){
@@ -37,17 +55,17 @@ function getDocuments(){
           success: function(data){
             $("#typedocument").find('option').remove();
             $("#typedocument").append('<option value="" selected>Selecciona tipo de documento</option>');
-          $.each(data,function(key, registro) {
-            $("#typedocument").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
-          });
-        },
-        error: function(data) {
+            $.each(data,function(key, registro) {
+              $("#typedocument").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
+            });
+          },
+          error: function(data) {
 
-        }
-      });
+          }
+        });
       }
 
-function getTypePerson(value){
+      function getTypePerson(value){
   if(value == "1") //persona natural
   {
 
