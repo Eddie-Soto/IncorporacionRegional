@@ -542,5 +542,4 @@ else
 </script>
 
 @endsection
-<script language="JavaScript" type="text/javascript" src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=1.3') }} "></script>
-<!--script language="JavaScript" type="text/javascript" src="{{asset('regchileasset/js/singup/Peru/validationsper.js?v=1.0')}}"></script-->
+
