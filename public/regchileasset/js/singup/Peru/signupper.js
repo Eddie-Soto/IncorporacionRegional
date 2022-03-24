@@ -6,7 +6,7 @@
 */
 function getDocuments(){
   var type_person = $('#type_per').val();
-var country = $('#country').val();
+  var country = $('#country').val();
        // var regi = regis.replace("'", "apost");
         //string.replace(searchvalue, newvalue)
         $.ajax({
@@ -36,10 +36,5 @@ var country = $('#country').val();
       }
 
 
-
-$(function() {
-
- // getStates();
-  getDocuments();
-        //document.getElementById("btnProfile").disabled = true;
-      });
+ getDocuments();
+      

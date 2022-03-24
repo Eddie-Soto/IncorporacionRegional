@@ -465,7 +465,7 @@
 </form>
 
 
-<script src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=1.1') }} "></script>
+<script src="{{ asset('regchileasset/js/singup/Peru/signupper.js?v=1.2') }} "></script>
 <script src="{{asset('regchileasset/js/singup/Peru/validationsper.js?v=1.0')}}"></script>
 <script type="text/javascript">
 
