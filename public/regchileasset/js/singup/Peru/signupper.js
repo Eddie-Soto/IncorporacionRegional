@@ -1,6 +1,38 @@
 var URLactual = window.location;
 
 /**
+* Función que obtiene los estados 
+*/
+/*CHILE CHANGUE CIUDAD*/
+function getStates(){
+
+
+  var country = $('#country').val();
+  $.ajax({
+    type: "GET",
+    url: '/states',
+    dataType: "json",
+    data: {
+      getstate: country
+    },
+    success: function(data){
+      $("#state").find('option').remove();
+      $("#state").append('<option value="" selected>Selecciona una opción</option>');
+      $("#city").append('<option value="" selected>Selecciona una opción</option>');
+      $("#colony").append('<option value="" selected>Selecciona una opción</option>');
+      $.each(data,function(key, registro) {
+
+        $("#state").append('<option value='+registro.state_name.replace(/ /g, "%")+'>'+registro.state_name+'</option>');
+      });
+    },
+    error: function(data) {
+
+    }
+  });
+
+}
+
+/**
 * Función que muestra los campos del banco si lo desea
 */
 function check_bank(){
@@ -102,7 +134,7 @@ function getDocuments(){
 
 $( document ).ready(function() {
 
- // getStates();
+  getStates();
 
         //document.getElementById("btnProfile").disabled = true;
       });

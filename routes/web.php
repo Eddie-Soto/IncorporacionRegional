@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/typedocuments', 'SignupRegionalController@gettypeDocuments');
 
-Route::get('profile/per/states','SignupRegionalController@states');
+Route::get('/states','SignupRegionalController@states');
 Route::get('profile/per/municipality','SignupRegionalController@municipality');
 Route::get('profile/per/ciudad','SignupRegionalController@ciudad');
 
