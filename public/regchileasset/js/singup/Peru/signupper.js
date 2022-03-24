@@ -6,7 +6,7 @@ var URLactual = window.location;
 */
 function getDocuments(){
   var type_person = $('#type_per').val();
-var country = $('#country').val();
+  var country = $('#country').val();
        // var regi = regis.replace("'", "apost");
         //string.replace(searchvalue, newvalue)
         $.ajax({
