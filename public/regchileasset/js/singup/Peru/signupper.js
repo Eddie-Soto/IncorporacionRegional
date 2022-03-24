@@ -35,7 +35,7 @@ function getDocuments(){
       });
       }
 
-      function type_person(value){
+function getTypePerson(value){
   if(value == "1") //persona natural
   {
 
@@ -55,8 +55,8 @@ function getDocuments(){
    else if(value == "0") //persona Juridica
    {
     document.getElementById('namenat').setAttribute('hidden',true);
-     document.getElementById('apenat').setAttribute('hidden',true);
-     document.getElementById('empname').removeAttribute('hidden',true);
+    document.getElementById('apenat').setAttribute('hidden',true);
+    document.getElementById('empname').removeAttribute('hidden',true);
   }
 }
 
@@ -65,6 +65,6 @@ function getDocuments(){
 $( document ).ready(function() {
 
  // getStates();
-  
+
         //document.getElementById("btnProfile").disabled = true;
       });
