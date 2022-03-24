@@ -4,7 +4,7 @@ var URLactual = window.location;
 * Función que Obtiene las Estados de Perú
 */
 function getCities(){
-  var regi = $('#region').val();
+  var regi = $('#state').val();
   var country = $('#country').val();
 
        // var regi = regis.replace("'", "apost");
