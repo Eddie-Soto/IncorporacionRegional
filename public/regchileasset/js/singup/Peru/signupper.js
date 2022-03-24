@@ -26,7 +26,7 @@ var country = $('#country').val();
           //  $("#ciudad").append('<option value="" selected>selecciona una opcion</option>');
           $.each(data,function(key, registro) {
 
-            $("#comuna").append('<option value='+registro.id_type.replace(/ /g, "%")+'>'+registro.name+'</option>');
+            $("#comuna").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
           });
         },
         error: function(data) {
