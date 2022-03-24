@@ -44,6 +44,7 @@ function getTypePerson(value){
      document.getElementById('namenat').removeAttribute('hidden',true);
      document.getElementById('apenat').removeAttribute('hidden',true);
      document.getElementById('empname').setAttribute('hidden',true);
+     document.getElementById('namelegalperson').setAttribute('hidden',true);
      
 
    }
@@ -51,12 +52,15 @@ function getTypePerson(value){
      document.getElementById('namenat').removeAttribute('hidden',true);
      document.getElementById('apenat').removeAttribute('hidden',true);
      document.getElementById('empname').setAttribute('hidden',true);
+     document.getElementById('namelegalperson').setAttribute('hidden',true);
    }
    else if(value == "0") //persona Juridica
    {
     document.getElementById('namenat').setAttribute('hidden',true);
     document.getElementById('apenat').setAttribute('hidden',true);
     document.getElementById('empname').removeAttribute('hidden',true);
+    document.getElementById('namelegalperson').removeAttribute('hidden',true);
+
   }
 }
 
