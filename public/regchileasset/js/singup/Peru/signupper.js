@@ -1,5 +1,21 @@
 var URLactual = window.location;
 
+/**
+* Función que muestra los campos del cotitular si lo desea
+*/
+function check_cotitular(){
+  if($("input[id='info_cotitular']").is(':checked')){
+    document.getElementById('check_coti').setAttribute('hidden',true);
+    document.getElementById('check_coti').removeAttribute('hidden',true);
+  }
+  else if(!$("input[id='info_cotitular']").is(':checked')){
+    document.getElementById('check_coti').setAttribute('hidden',true);
+    document.getElementById('name_cotitular').value="";
+    document.getElementById('rut_cotitular').value="";
+
+  }
+
+}
 
 /**
 * Función que Obtiene las tipos de docuemnto de Perú
@@ -21,11 +37,7 @@ function getDocuments(){
           success: function(data){
             $("#typedocument").find('option').remove();
             $("#typedocument").append('<option value="" selected>Selecciona tipo de documento</option>');
-         //   $("#region").append('<option value="" selected>selecciona una opcion</option>');
-           // $("#comuna").append('<option value="" selected>selecciona una opcion</option>');
-          //  $("#ciudad").append('<option value="" selected>selecciona una opcion</option>');
           $.each(data,function(key, registro) {
-
             $("#typedocument").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
           });
         },
