@@ -164,7 +164,7 @@
 <div class="row">
    <div class="col-md-6">
       <label for="type_person"><span style="color: red !important;">*</span> <b>TIPO DE PERSONA:</b></label>
-      <select id="type_per" name="type_person" class="form-control" onchange="getDocuments();">
+      <select id="type_per" name="type_person" class="form-control" onchange=" type_person(this.value); getDocuments();">
         <option value=""></option>
         <option value="1">Persona natural (Válido solo con DNI)</option>
         <option value="2">Persona natural con negocio (Válido solo con ficha RUC, aplica para Extranjeros)</option>
