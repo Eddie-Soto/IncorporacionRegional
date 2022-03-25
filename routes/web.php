@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/codegood', 'incorporacionController@Codegood');
-Route::get('/searchsponsorValid','incorporacionController@searchsponsorValid');
+Route::get('/codegood', 'SignupRegionalController@Codegood');
+Route::get('/searchsponsorValid','SignupRegionalController@searchsponsorValid');
 
 Route::get('/searchsponsor', 'SignupRegionalController@playeras');
 Route::get('/playeras', 'SignupRegionalController@playeras');
