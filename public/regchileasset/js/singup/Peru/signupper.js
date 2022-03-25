@@ -139,6 +139,83 @@ function CodeBien(){
     //alert(value);
   }
 
+  /**
+* Función que comprueba el sponsor
+*/
+function Search_sponsor_Valid(){
+
+  var codigo = document.getElementById("code-sponsor").value;
+        //alert(codigo);
+        $.ajax({
+          type: "GET",
+          url: '/searchsponsorValid',
+          dataType: "json",
+          data: {
+            code: codigo
+          },
+          beforeSend: function(){
+            $("#view-name-sponsor").find('a').remove();
+            $("#view-name-sponsor").find('p').remove();
+            $("#view-name-sponsor").append('<p>Cargando...</p>');
+          },
+          success: function(data){
+            $("#view-name-sponsor").find('a').remove();
+
+            if (data == '3') {
+             $("#view-name-sponsor").find('p').remove();
+             $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+             document.getElementById("code-sponsor-validate").value = "";
+           }else if(data == '2'){
+             $("#view-name-sponsor").find('p').remove();
+             $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+             document.getElementById("code-sponsor-validate").value = "";
+           }else if(data == '1'){
+             $("#view-name-sponsor").find('p').remove();
+             $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+             document.getElementById("code-sponsor-validate").value = "";
+           }else{
+            $("#view-name-sponsor").find('p').remove();
+            document.getElementById("code-sponsor-validate").value = "1";
+           // $("#view-name-sponsor").append('<p>Cargando...</p>');
+           $.each(data,function(key, registro) {
+              //var codesponsor=registro.codigo;
+              if (registro.codigo==0) {
+                //$("#view-name-sponsor").find('p').remove();
+                $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+                document.getElementById("code-sponsor-validate").value = "";
+                document.getElementById('view-name-sponsor').innerHTML='';
+              }else{
+             // $("#view-name-sponsor").find('button').remove();
+          //  $("#view-name-sponsor").append('<a>'+registro.nombre+"  "+registro.codigo+'</a>');
+          
+
+          $("#view-name-sponsor").append('<p ><input type="text" class="btn btn-info" value='+registro.codigo+' onclick="funciontomarcodigo(this.value)">'+registro.nombre+'</p>');
+          document.getElementById('demo').removeAttribute('hidden',true);
+             document.getElementById('demo').setAttribute('hidden',true);
+            //$("#view-name-sponsor").append('<p><button class="btn btn-info" value='+registro.codigo+' onclick="funciontomarcodigo(this.value)">'+registro.nombre+'  '+registro.codigo+'</button></p>');
+
+
+              //$("#view-name-sponsor").append('<p value='registro.codigo' onclick='funciontomarcodigo(this.value)'>'+registro.nombre+'  '+registro.codigo+'</p>');
+
+               // $("#view-name-sponsor").find('p').remove();
+                //$("#view-name-sponsor").append('<p>'+registro.nombre+"  "+registro.codigo+'<p>');
+                //$("#view-name-sponsor").append('<p>'+registro.nombre+"   "+registro.codigo+'<p>');
+                //$("#view-name-sponsor").append('<p>'+registro.nombre+"  "+registro.codigo+'<p>');
+              }
+            });
+         }
+       },
+       error: function(data) {
+
+        $("#view-name-sponsor").find('p').remove();
+        $("#view-name-sponsor").append('<p>Cargando...</p>');
+        $("#view-name-sponsor").find('p').remove();
+        $("#view-name-sponsor").append('<p>El código no existe</p>');
+        document.getElementById("code-sponsor-validate").value = "";
+      }
+    });
+      }
+
 /**
 * Función que busca el sponsor
 */
