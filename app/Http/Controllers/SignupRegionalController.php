@@ -27,6 +27,50 @@ class SignupRegionalController extends Controller
 		return view('NewSignupRegional.Peru.profileper');
 	}
 
+	/**
+    * Función que valida que el email digitado no se enceuntre en la BD
+    */
+    public function validateEmail(Request $request){
+        $email = $request->email;
+
+        $conection = \DB::connection('mysql_las');
+
+       // $response = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email' and type=0");
+        $response = $conection->select("SELECT correo FROM nikkenla_marketing.control_ci where correo = '$email'");
+
+        \DB::disconnect('mysql_las');
+
+        if ($response) {
+         echo '0';
+
+     	}else{
+        $conection = \DB::connection('mysql_las');
+
+               // $response = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email' and type=0");
+        $response_contratcs = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email'");
+
+        \DB::disconnect('mysql_las');
+                if ($response_contratcs) {
+
+                   echo '0';
+                }else{
+                        $conection = \DB::connection('mysql_la_users');
+
+                       // $response = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email' and type=0");
+                        $response_users = $conection->select("SELECT email FROM mitiendanikken.users where email = '$email'");
+
+                        \DB::disconnect('mysql_la_users');
+                        if ($response_users) {
+                            echo '2';
+                        }else{
+                           echo '1';  
+                        }
+                   
+                }
+        }
+
+    }
+
 	public function gettypeDocuments(Request $request){
 		$type_person=$request->type_person;
 		$country=$request->country;
@@ -41,6 +85,33 @@ class SignupRegionalController extends Controller
 
     	return $typedocuments;
 	}
+
+	/**
+    * Función que regresa las ciudades para ser mostradas en la vista
+    */
+        public function ciudad(Request $request){
+            $ciudad= str_replace("%", " ", $request->ciudad);
+            $country=$request->country;
+
+            $conection = \DB::connection('mysql_las');
+
+                //Obtenemos los datos del abi
+            $ciudades= $conection->table('nikkenla_incorporation.control_states_test')
+            ->select('colony_name as colony_name')
+            ->where('province_name','=', $ciudad)
+            ->distinct('province_name')
+            ->where('pais','=', $country)
+            ->orderBy('colony_name', 'ASC')
+            ->get();
+
+
+            //$cities = $conection->select("SELECT distinct province_name FROM nikkenla_incorporation.control_states_test where pais='10' and state_name = '$state'");
+
+            \DB::disconnect('mysql_las');
+
+            return \json_encode($ciudades);
+
+        }
 
 	public function municipality(Request $request){
 		$state= str_replace("%", " ", $request->reg);
@@ -429,5 +500,119 @@ public function storePeru(Request $request){
 	\DB::disconnect('mysql_las');
 
 }
+
+public function checkOutClubApartado($email){
+
+
+        /*Obtenemos los datos del aseror*/
+
+        
+
+        /*Concatenamos los tres valores y los encriptamos en base 64*/
+        $data = base64_encode($email);
+
+        /*Generamos la url del checkourt referenciado a wootbit*/
+         //$url = "http://test.mitiendanikken.com/mitiendanikken/auto/login/$data";
+         $url= "https://shopingcart.nikkenlatam.com/login-integration-incorporate-apartado.php?email=" . base64_encode($email)."&item=5032";
+
+         
+
+        return Redirect::to($url);
+
+    }
+  /**
+    * Método que realizar el checkout independiente
+    */
+    public function checkOutClub($email){
+
+
+        /*Obtenemos los datos del aseror*/
+
+        
+
+        /*Concatenamos los tres valores y los encriptamos en base 64*/
+        $data = base64_encode($email);
+
+        /*Generamos la url del checkourt referenciado a wootbit*/
+        $url = "https://mitiendanikken.com/mitiendanikken/auto/login/". base64_encode($email)."?force_change=".base64_encode('1441:14412');
+
+
+        return Redirect::to($url);
+
+    }
+
+    /**
+    * Método que realizar el checkout independiente
+    */
+    public function checkOutAbi($email,$products_checkout){
+
+
+        /*Obtenemos los datos del aseror*/
+
+        /*$email = "servicio.chl@nikkenlatam.com";
+        $products_checkout = "5006:2";
+        $discount_abi = "S";*/
+        $discount_abi = "S";
+
+
+        /*Concatenamos los tres valores y los encriptamos en base 64*/
+        $data = base64_encode($email . "&" . $products_checkout . "&" . $discount_abi);
+
+        /*Generamos la url del checkourt referenciado a wootbit*/
+        $url = "https://nikkenlatam.com/services/checkout/redirect.php?app=incorporacion&data=$data";
+
+
+        return Redirect::to($url);
+
+    }
+
+      /**
+    * Método que realizar el checkout independiente
+    */
+      public function checkOutRe(Request $request){
+
+
+        /*Obtenemos los datos del aseror*/
+
+        $email = $request->email;
+        $products_checkout = $request->item.":".$request->amount;
+        $discount_abi = "S";
+
+
+        /*Concatenamos los tres valores y los encriptamos en base 64*/
+        $data = base64_encode($email . "&" . $products_checkout . "&" . $discount_abi);
+
+        /*Generamos la url del checkourt referenciado a wootbit*/
+        $url = "https://nikkenlatam.com/services/checkout/redirect.php?app=incorporacion&data=$data";
+
+
+        return Redirect::to($url);
+
+    }
+
+
+
+
+    public function checkOutW(Request $request){
+
+
+        /*Obtenemos los datos del aseror*/
+
+        $email = $request->email;
+        $products_checkout = $request->item.":".$request->amount;
+        $discount_abi = "S";
+
+
+        /*Concatenamos los tres valores y los encriptamos en base 64*/
+        $data = base64_encode($email . "&" . $products_checkout . "&" . $discount_abi);
+
+        /*Generamos la url del checkourt referenciado a wootbit*/
+        //$url = "https://nikkenlatam.com/services/checkout/redirect.php?app=pruebas&data=$data";
+        $url = "https://nikkenlatam.com/services/checkout/redirect.php?app=pruebas&data=$data";
+
+
+        return Redirect::to($url);
+
+    }
 
 }

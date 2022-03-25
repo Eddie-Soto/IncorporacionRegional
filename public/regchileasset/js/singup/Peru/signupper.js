@@ -1,4 +1,51 @@
 var URLactual = window.location;
+
+/**
+* Función que valida que el email digitado no se enceuntre en la BD y que no este vacio
+*/
+function validateMail(){
+  var email = $('#email').val().trim();
+  if(email == ""){
+
+  }else{
+    $.ajax({
+      type: 'GET',
+      url: '/email',
+      dataType: "json",
+      data:{ email: email},
+
+      success: function(respuesta){
+        //alert(respuesta);
+            //  alert(email);
+            if (respuesta==1) {
+                 // document.getElementById("btnProfile").disabled s= false;
+               }else if(respuesta == 2){
+                swal({
+                  title: 'Error',
+                  text: 'El correo ya se encuentar registrado en la Tienda Virtual',
+                  type: 'error',
+                  padding: '2em'
+                })
+                document.getElementById("email").value="";
+              }
+              else if(respuesta==0){
+
+                swal({
+                  title: 'Error',
+                  text: alertDuplicateMail,
+                  type: 'error',
+                  padding: '2em'
+                })
+                document.getElementById("email").value="";
+
+
+
+              }
+            }
+          });
+  }
+}
+
 /**
 * Función que Obtiene las Ciudades de Perú
 */

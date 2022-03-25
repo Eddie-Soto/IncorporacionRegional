@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/email', 'SignupRegionalController@validateMail');
+
 Route::get('/typedocuments', 'SignupRegionalController@gettypeDocuments');
 
 Route::get('/states','SignupRegionalController@states');
 Route::get('/municipality','SignupRegionalController@municipality');
-Route::get('profile/per/ciudad','SignupRegionalController@ciudad');
+Route::get('/ciudad','SignupRegionalController@ciudad');
 
 Route::get('/index', 'SignupRegionalController@index');
 
