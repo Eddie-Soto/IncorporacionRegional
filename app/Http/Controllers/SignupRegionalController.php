@@ -650,7 +650,7 @@ $conection = \DB::connection('mysql_las');
 $secret_nikken="";
 $conection = \DB::connection('mysql_tv');
 
-	$tv = $conection->insert("INSERT INTO users (country_id, email, sap_code, sap_code_sponsor, password,secret_nikken, client_type, rank, name,last_name, phone, cell_phone, state, status, created_at) values ('$country','$email','$completecode','$sponsor','0','$secret_nikken','$type_letter','Directo','$name','last name','$cel','$cel','$state','1','$creacion')");
+	$tv = $conection->insert("INSERT INTO users (country_id, email, sap_code, sap_code_sponsor, password,secret_nikken, client_type, rank, name,last_name,identification_number, phone, cell_phone, state, status, created_at,updated_at,last_password_update) values ('$country','$email','$completecode','$sponsor','0','$secret_nikken','$type_letter','Directo','$name','last name','0','$cel','$cel','$state','1','$creacion','$creacion','$creacion')");
 
 	\DB::disconnect('mysql_tv');
 	echo $tv;
