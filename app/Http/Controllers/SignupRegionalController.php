@@ -544,6 +544,7 @@ $bank_name = $request->input('bank_name').trim("");
 		$user_promotion = $conection->insert("INSERT INTO nikkenla_incorporation.user_promotion_kit (code_sponsor, code_redeem, kit, status, country_id, code_ticket, created_at) VALUES ('$sponsor','$completecode','$kit','2','10','$boleto','$creacion')");
 		\DB::disconnect('mysql_las');
 	}
+	/*
 
 	$fileone = $request->file('fileone');
 	$filetwo = $request->file('filetwo');
@@ -563,8 +564,8 @@ $bank_name = $request->input('bank_name').trim("");
 		$name1 = $fileone->getClientOriginalName();
 
 		$path = $request->file('fileone')->store(
-			incorporacionController::S3_SLIDERS_FOLDER,
-			incorporacionController::S3_OPTIONS
+			SignupRegionalController::S3_SLIDERS_FOLDER,
+			SignupRegionalController::S3_OPTIONS
 		);
 
 
@@ -581,8 +582,8 @@ $bank_name = $request->input('bank_name').trim("");
 		$name2 = $filetwo->getClientOriginalName();
 
 		$path2 = $request->file('filetwo')->store(
-			incorporacionController::S3_SLIDERS_FOLDER,
-			incorporacionController::S3_OPTIONS
+			SignupRegionalController::S3_SLIDERS_FOLDER,
+			SignupRegionalController::S3_OPTIONS
 		);
 
                 //asi obtienes la url donde se guardo
@@ -598,8 +599,8 @@ $bank_name = $request->input('bank_name').trim("");
 		$name3 = $filetrhee->getClientOriginalName();
 
 		$path3 = $request->file('filetrhee')->store(
-			incorporacionController::S3_SLIDERS_FOLDER,
-			incorporacionController::S3_OPTIONS
+			SignupRegionalController::S3_SLIDERS_FOLDER,
+			SignupRegionalController::S3_OPTIONS
 		);
 
                 //asi obtienes la url donde se guardo
@@ -618,7 +619,7 @@ $bank_name = $request->input('bank_name').trim("");
 	$signupfiles = $conection->select("INSERT INTO  nikkenla_incorporation.signupfiles (sap_code,name,filepath,country_id,created_at) VALUES ('$completecode','$titular_name','$urlscompletes','3','$creacion')");
 
 	\DB::disconnect('mysql_las');
-
+*/
 $name='tsts';
 	$conection = \DB::connection('mysql_las');
 
