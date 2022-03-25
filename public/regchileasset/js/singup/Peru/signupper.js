@@ -1,6 +1,47 @@
 var URLactual = window.location;
 
 /**
+* Función que Valida la fecha de nacimiento
+*/
+function validate_birthdate(value){
+
+  var res = value.split("-");
+  if( res[0]=="undefinied" || res[1]=="undefinied" || res[2]=="undefinied" || /_/.test(res[0]) || /_/.test(res[1]) || /_/.test(res[2]) )
+  {
+    swal({
+      title: 'Error',
+      text: 'Fecha de Nacimiento Incompleta',
+      type: 'error',
+      padding: '2em'
+    })
+  }
+  res[0];
+  res[1];
+  res[2];
+  var day = res[0];
+  var month = res[1];
+  var year = res[2]
+  var age =  18;
+
+  var mydate = new Date();
+  mydate.setFullYear(year, month-1, day);
+
+  var currdate = new Date();
+  currdate.setFullYear(currdate.getFullYear() - age);
+
+  if(currdate < mydate)
+  {
+    swal({
+      title: 'Error',
+      text: 'Debes ser mayor de 18 para inscribirte a NIKKEN',
+      type: 'error',
+      padding: '2em'
+    })
+  }
+}
+
+
+/**
 * Función que valida que el email digitado no se enceuntre en la BD y que no este vacio
 */
 function validateMail(){
