@@ -77,11 +77,11 @@ class SignupRegionalController extends Controller
 
         $country=$request->country;
 
-        if ($country == 1) {
+        if($country == '1') {
         	$country == 'COL';
-        }elseif ($country == 2) {
+        }elseif ($country == '2') {
         	$country == 'MEX';
-        }elseif ($country == 3) {
+        }elseif ($country == '3') {
         	$country == 'PER';
         }
         
