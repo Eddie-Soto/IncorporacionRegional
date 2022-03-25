@@ -71,6 +71,88 @@ class SignupRegionalController extends Controller
 
     }
 
+    public function searchsponsor(Request $request){
+        $codigo=$request->code;
+
+        $conection = \DB::connection('mysql_las');
+/*
+        $consulta= $conection->table('nikkenla_marketing.control_ci_test')
+            ->select('nombre as nombre','codigo AS codigo')
+            ->where('codigo','LIKE',"%$codigo%")
+            ->orWhere('nombre','LIKE',"%$codigo%")
+            ->where('estatus','=', 1)
+            ->where('b1','=', 1)
+            ->toSql();
+
+            echo($consulta);
+*/
+            
+            $consulta = $conection->select("SELECT  nombre,codigo  FROM nikkenla_marketing.control_ci where estatus = '1' and b1 = '1' and codigo like '%$codigo%' or nombre like '%$codigo%'and estatus = '1' and b1 = '1' or codigo = '$codigo' and estatus = '1' and b1 = '1' or nombre = '$codigo' and estatus = 1 and b1 = 1 LIMIT 3");
+
+            
+            \DB::disconnect('mysql_las');
+
+
+
+            if($codigo == '' || $codigo == '24188303' || $codigo == '241883' || $codigo == '2418830' || $codigo == '0' || $codigo == '1' || $codigo == '12' || $codigo == '123' || $codigo == '1234' || $codigo == '12345' || $codigo == '123456' || $codigo == '1234567' || $codigo == '12345678' || $codigo == '123456789'){
+                return '1';
+                exit;
+            }
+
+            if($consulta){
+                return \json_encode($consulta);
+            }
+            else{
+                return '2';
+                exit;
+            }
+
+
+        }
+public function Codegood(Request $request){
+    $codigo=$request->code;
+
+    $conection = \DB::connection('mysql_las');
+    
+    $consulta1 = $conection->select("SELECT  codigo  FROM nikkenla_marketing.control_ci where codigo = '$codigo' and estatus = 1 and b1 = 1");
+
+    \DB::disconnect('mysql_las');
+
+    if($consulta1){
+        echo '0';
+    }
+    else{
+        echo '1';
+    }
+}
+
+        public function searchsponsorValid(Request $request){
+            $codigo=$request->code;
+
+            $conection = \DB::connection('mysql_las');
+            
+            $consulta = $conection->select("SELECT  nombre,codigo  FROM nikkenla_marketing.control_ci where codigo = '$codigo' or nombre = '$codigo' and estatus = 1 and b1 = 1 LIMIT 3");
+
+            \DB::disconnect('mysql_las');
+
+
+
+            if($codigo == '' || $codigo == '24188303' || $codigo == '241883' || $codigo == '2418830' || $codigo == '0' || $codigo == '1' || $codigo == '12' || $codigo == '123' || $codigo == '1234' || $codigo == '12345' || $codigo == '123456' || $codigo == '1234567' || $codigo == '12345678' || $codigo == '123456789'){
+                return '1';
+                exit;
+            }
+
+            if($consulta){
+                return \json_encode($consulta);
+            }
+            else{
+                return '2';
+                exit;
+            }
+
+
+        }
+
     public function playeras(Request $request){
         $gender = $request->gender;
         $kit = $request->kit;

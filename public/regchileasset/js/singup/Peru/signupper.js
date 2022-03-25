@@ -5,7 +5,7 @@ var URLactual = window.location;
 */
 function Ocultar_playeras(){
   var kit = document.getElementById('kit').value;
-  
+
   var div_opciones=document.getElementById('show-playeras');
   var div_image=document.getElementById('shirt-sample');
   if(kit==5006 || kit=="" || kit==5002 || kit==5031 || kit == 5032){
@@ -105,6 +105,106 @@ function cl_or_abi(value){
     div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si eres Empresa y no desarrollarás  Negocio, debes registrarte como Club de Bienestar ( Recibes factura).</div>";
     
   }
+}
+
+function CodeBien(){
+ var codigo = document.getElementById("code-sponsor").value;
+        //alert(codigo);
+        $.ajax({
+          type: "GET",
+          url: URLactual + '/codegood',
+          dataType: "json",
+          data: {
+            code: codigo
+          },
+          success: function(data){
+            if(data==1){
+              document.getElementById('demo').removeAttribute('hidden',true);
+              document.getElementById("demo").innerHTML = "Por favor seleccionar una de las opciones";
+
+            }else{
+             document.getElementById('demo').removeAttribute('hidden',true);
+             document.getElementById('demo').setAttribute('hidden',true);
+           }
+         }
+
+       });
+
+      }
+
+/**
+* Función que busca el sponsor
+*/
+function Search_sponsor(value){
+  var codigo = value;
+  $.ajax({
+    type: "GET",
+    url: '/searchsponsor',
+    dataType: "json",
+    data: {
+      code: codigo
+    },
+    beforeSend: function(){
+      $("#view-name-sponsor").find('a').remove();
+      $("#view-name-sponsor").find('p').remove();
+      $("#view-name-sponsor").append('<p>Cargando...</p>');
+    },
+    success: function(data){
+      $("#view-name-sponsor").find('a').remove();
+
+      if (data == '3') {
+       $("#view-name-sponsor").find('p').remove();
+       $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+       document.getElementById("code-sponsor-validate").value = "";
+     }else if(data == '2'){
+       $("#view-name-sponsor").find('p').remove();
+       $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+       document.getElementById("code-sponsor-validate").value = "";
+     }else if(data == '1'){
+       $("#view-name-sponsor").find('p').remove();
+       $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+       document.getElementById("code-sponsor-validate").value = "";
+     }else{
+      $("#view-name-sponsor").find('p').remove();
+      document.getElementById("code-sponsor-validate").value = "1";
+           // $("#view-name-sponsor").append('<p>Cargando...</p>');
+           $.each(data,function(key, registro) {
+              //var codesponsor=registro.codigo;
+              if (registro.codigo==0) {
+                //$("#view-name-sponsor").find('p').remove();
+                $("#view-name-sponsor").append('<p>El codigo no existe <p>');
+                document.getElementById("code-sponsor-validate").value = "";
+                document.getElementById('view-name-sponsor').innerHTML='';
+              }else{
+             // $("#view-name-sponsor").find('button').remove();
+          //  $("#view-name-sponsor").append('<a>'+registro.nombre+"  "+registro.codigo+'</a>');
+          
+
+          $("#view-name-sponsor").append('<p ><input type="text" class="btn btn-info" value='+registro.codigo+' onclick="funciontomarcodigo(this.value)">'+registro.nombre+'</p>');
+          document.getElementById('demo').removeAttribute('hidden',true);
+          document.getElementById("demo").innerHTML = "Por favor seleccionar una de las opciones";
+             //document.getElementById('demo').setAttribute('hidden',true);
+            //$("#view-name-sponsor").append('<p><button class="btn btn-info" value='+registro.codigo+' onclick="funciontomarcodigo(this.value)">'+registro.nombre+'  '+registro.codigo+'</button></p>');
+
+
+              //$("#view-name-sponsor").append('<p value='registro.codigo' onclick='funciontomarcodigo(this.value)'>'+registro.nombre+'  '+registro.codigo+'</p>');
+
+               // $("#view-name-sponsor").find('p').remove();
+                //$("#view-name-sponsor").append('<p>'+registro.nombre+"  "+registro.codigo+'<p>');
+                //$("#view-name-sponsor").append('<p>'+registro.nombre+"   "+registro.codigo+'<p>');
+                //$("#view-name-sponsor").append('<p>'+registro.nombre+"  "+registro.codigo+'<p>');
+              }
+            });
+         }
+       },
+       error: function(data) {
+
+        $("#view-name-sponsor").find('p').remove();
+        $("#view-name-sponsor").append('<p>Cargando...</p>');
+        $("#view-name-sponsor").find('p').remove();
+        $("#view-name-sponsor").append('<p>'+code_no_exist+'</p>');
+      }
+    });
 }
 
 function SponsorRadio(){
