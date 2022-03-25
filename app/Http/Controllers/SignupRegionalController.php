@@ -76,6 +76,7 @@ class SignupRegionalController extends Controller
         $kit = $request->kit;
 
         $country=$request->country;
+
         if ($country == 1) {
         	$country == 'COL';
         }elseif ($country == 2) {
@@ -84,6 +85,7 @@ class SignupRegionalController extends Controller
         	$country == 'PER';
         }
         
+        dd($country);
 
         $conection = \DB::connection('mysql_las');
 
