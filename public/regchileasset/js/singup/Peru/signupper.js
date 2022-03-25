@@ -1,6 +1,129 @@
 var URLactual = window.location;
 
 /**
+* Función que muestra la playera si es que eligio el tipo de incorporación
+*/
+function Ocultar_playeras(){
+  var kit = document.getElementById('kit').value;
+  var div_opciones=document.getElementById('show-playeras');
+  var div_image=document.getElementById('shirt-sample');
+  if(kit==5006 || kit=="" || kit==5002 || kit==5031 || kit == 5032){
+    div_opciones.setAttribute('hidden',true);
+    div_image.setAttribute('hidden',true);
+  }else{
+    div_opciones.removeAttribute('hidden',true);
+    div_image.removeAttribute('hidden',true);
+  }
+}
+
+function showShirtSample(){
+     // document.getElementById('show-playeras').removeAttribute('hidden',true);
+     var item = document.getElementById('shirt-size').value;
+     var divSample = document.getElementById('shirt-sample');
+     var imgSample = "";
+     if(item == ""){
+      divSample.innerHTML="";
+    }else{
+     divSample.innerHTML = "<br><img class='img-thumbnail' src='../../regchileasset/img/playera.png' width='100%' name='shirt-sample'>";
+   }
+       // divSample.innerHTML = "<br><img src='../../regchileasset/img/f.png' width='100%' name='shirt-sample'>";
+     }
+
+     function getDataShirt(){
+    //  var country = document.getElementById('country').value;
+    var kit = document.getElementById('kit').value;
+    var gender = document.getElementById('gender1').value;
+    //var gender= $('#gender1').val();
+    //alert(gender);
+    playeras(gender, kit);
+  }
+
+/**
+* Función que muestra los campos dependiendo el tipo de incorporación
+*/
+function cl_or_abi(value){
+  if(value == "1"){
+    document.getElementById('abi').setAttribute('hidden',true);
+    document.getElementById('abi').removeAttribute('hidden',true);
+    document.getElementById('kits').removeAttribute('hidden',true);
+    document.getElementById('kits-cb').setAttribute('hidden',true);
+    
+    div_texto_club_or_abi =  document.getElementById('cborabitxt');
+    document.getElementById('show-playeras').removeAttribute('hidden',true);
+    document.getElementById('shirt-sample').removeAttribute('hidden',true);
+
+    div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si has seleccionado Asesor de Bienestar, y desarrollarás el Negocio, elige algunas de estas opciones de tipo de persona según sea tu caso!</div>";
+
+  }else if(value == "0"){
+    document.getElementById('abi').removeAttribute('hidden',true);
+    document.getElementById('abi').setAttribute('hidden',true);
+    document.getElementById('kits').setAttribute('hidden',true);
+    document.getElementById('kits-cb').removeAttribute('hidden',true);
+    div_texto_club_or_abi =  document.getElementById('cborabitxt');
+    document.getElementById('show-playeras').setAttribute('hidden',true);
+    document.getElementById('shirt-sample').setAttribute('hidden',true);
+    
+
+    div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si eres Empresa y no desarrollarás  Negocio, debes registrarte como Club de Bienestar ( Recibes factura).</div>";
+    
+  }
+}
+
+function SponsorRadio(){
+  document.getElementById("opc1").checked=true;
+}
+
+/**
+* Función que Valida el sponsor
+*/
+function Validate_sponsor_exist(){
+  var sponsorexist = document.getElementById("code-sponsor-validate").value;
+    //alert(sponsorexist);
+    if(sponsorexist == ""){
+       // alert('Digita un sponsor valido');
+       document.getElementById("code-sponsor").value="";
+     }
+   }
+
+/**
+* Función que hace una opacidad en los tipos de sponsor
+*/
+function Opacity_type_sponsor(value)
+{
+
+  var type = value;
+
+  if(type == 1)
+  {
+    document.getElementById("option-sponsor-one").style.opacity = "1";
+        //document.getElementById("option-sponsor-two").style.opacity = "0.6";
+        document.getElementById("option-sponsor-three").style.opacity = "0.6";
+
+        document.getElementById("code-sponsor").disabled = false;
+        document.getElementById('code-sponsor').setAttribute('required',true);
+        document.getElementById("code-sponsor-validate").value = "";
+
+      }
+      else if(type == 3)
+      {
+        document.getElementById("option-sponsor-one").style.opacity = "0.6";
+        //document.getElementById("option-sponsor-two").style.opacity = "0.6";
+        document.getElementById("option-sponsor-three").style.opacity = "1";
+
+        $("#view-name-sponsor").html("");
+        document.getElementById("code-sponsor").value = "";
+        document.getElementById("code-sponsor").disabled = true;
+        document.getElementById('code-sponsor').removeAttribute('required',true);
+        var err = document.getElementById('code-sponsor-error')
+        if(err!=null){
+          err.remove();
+        }
+        document.getElementById("code-sponsor-validate").value = "0";
+
+      }
+    }
+
+/**
 * Función que Valida la fecha de nacimiento
 */
 function validate_birthdate(value){
