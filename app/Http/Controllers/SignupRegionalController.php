@@ -255,21 +255,7 @@ class SignupRegionalController extends Controller
 
     }
 
-    public function playeras(Request $request){
-    	$gender = $request->gender;
-    	$kit = $request->kit;
-
-
-
-
-    	$conection = \DB::connection('mysql_las');
-
-    	$playeras = $conection->select("SELECT * FROM nikkenla_incorporation.cat_shirts WHERE pais = 'CHL' AND genero = '$gender' ");
-
-    	\DB::disconnect('mysql_las');
-
-    	return $playeras;
-    }
+ 
 
         /**
     * Función que consulta el nombre de los bancos para ser mostrados en la vista
