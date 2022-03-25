@@ -628,7 +628,29 @@ $name='tsts';
 	\DB::disconnect('mysql_las');
 
 	echo $signupfiles;
+
+
+	if ($type_incorporation == 0) {
+		$type='CLUB';
+		
+	}elseif ($type_incorporation ==1) {
+		$type='CI';
+	}else{
+		$type='CI';
+	}
+
+$conection = \DB::connection('mysql_las');
+
+	$control_ci = $conection->insert("INSERT INTO nikkenla_marketing.control_ci_test (pais, tipo, codigo, nombre, codigop, correo, celular, b1, b2) VALUES ('$country', '$type', '$completecode', '$name', '$sponsor', '$email', '$cel', 1, 1)");
+
+	\DB::disconnect('mysql_las');
+
+	echo $control_ci;
 	exit;
+
+	
+
+	
 
 	
 
