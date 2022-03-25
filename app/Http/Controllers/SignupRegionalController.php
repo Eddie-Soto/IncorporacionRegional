@@ -728,7 +728,7 @@ public function checkOutClubApartado($email){
         $data = base64_encode($email . "&" . $products_checkout . "&" . $discount_abi);
 
         /*Generamos la url del checkourt referenciado a wootbit*/
-        $url = "https://nikkenlatam.com/services/checkout/redirect.php?app=incorporacion&data=$data";
+        $url = "https://nikkenlatam.com/services/checkout/testredirect.php?app=incorporacion&data=$data";
 
 
         return Redirect::to($url);
