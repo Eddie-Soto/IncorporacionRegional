@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/playeras', 'SignupRegionalController@playeras');
 Route::get('/email', 'SignupRegionalController@validateEmail');
 
 Route::get('/typedocuments', 'SignupRegionalController@gettypeDocuments');

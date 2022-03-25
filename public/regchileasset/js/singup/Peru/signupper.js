@@ -38,6 +38,43 @@ function showShirtSample(){
     playeras(gender, kit);
   }
 
+  function playeras(gender, kit){
+  var divplayeras = document.getElementById('show-playeras');
+  var div_image=document.getElementById('shirt-sample');
+  var country = $('#country').val();
+
+  var valor_size = document.getElementById('shirt-size').value;
+
+  if (kit!=5006 && gender !="") {
+    if(gender == 'M'){
+      gender = "Hombre";
+    }
+    else{
+      gender = "Mujer";
+    }
+
+    $.ajax({
+      type: 'GET',
+      url: '/playeras',
+      dataType: "json",
+      data:{ gender: gender, kit: kit,country: country },
+      success: function(respuesta){
+       /* if(valor_size==""){
+          div_image.setAttribute('hidden',true);
+        }*/
+        $("#shirt-size").find('option').remove();
+        $("#shirt-size").append('<option value="" selected>Seleciona una opción</option>');
+        $.each(respuesta,function(key, registro) {
+         $("#shirt-size").append('<option value='+registro.item+'>'+registro.descripcion+'</option>');
+     // $("#shirt-size").append('<p ><input type="text" class="btn btn-info" value='+registro.codigo+' onclick="funciontomarcodigo(this.value)">'+registro.nombre+'</p>');
+     
+   });
+
+      }
+    });
+  }
+}
+
 /**
 * Función que muestra los campos dependiendo el tipo de incorporación
 */
@@ -214,7 +251,7 @@ function validateMail(){
 * Función que Obtiene las Ciudades de Perú
 */
 function getColony(){
-  var ciudades = $('#ciudad').val();
+  var ciudades = $('#city').val();
   var country = $('#country').val();
 
        // var regi = regis.replace("'", "apost");

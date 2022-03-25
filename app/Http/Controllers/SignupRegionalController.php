@@ -71,6 +71,22 @@ class SignupRegionalController extends Controller
 
     }
 
+    public function playeras(Request $request){
+        $gender = $request->gender;
+        $kit = $request->kit;
+
+        $country=$request->country;
+        
+
+        $conection = \DB::connection('mysql_las');
+
+        $playeras = $conection->select("SELECT * FROM nikkenla_incorporation.cat_shirts WHERE pais = '$country' AND genero = '$gender' ");
+
+        \DB::disconnect('mysql_las');
+
+        return $playeras;
+    }
+
 	public function gettypeDocuments(Request $request){
 		$type_person=$request->type_person;
 		$country=$request->country;
