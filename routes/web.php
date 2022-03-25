@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/codegood', 'SignupRegionalController@Codegood');
 Route::get('/searchsponsorValid','SignupRegionalController@searchsponsorValid');
 
-Route::get('/searchsponsor', 'SignupRegionalController@playeras');
+Route::get('/searchsponsor', 'SignupRegionalController@searchsponsor');
 Route::get('/playeras', 'SignupRegionalController@playeras');
 Route::get('/email', 'SignupRegionalController@validateEmail');
 
