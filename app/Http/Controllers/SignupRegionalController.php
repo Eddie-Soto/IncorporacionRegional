@@ -654,7 +654,10 @@ $conection = \DB::connection('mysql_tv');
 
 	\DB::disconnect('mysql_tv');
 	echo $tv;
-	exit;
+	$kit= $request->input('kit').trim("");
+            $kit_complete=$kit.':1';
+            $products_two=$kit_complete.';'.$playera.':1';
+            return $this->checkOutAbi($email,$products_two);
 
 	
 
