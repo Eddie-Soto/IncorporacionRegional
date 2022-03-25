@@ -40,7 +40,7 @@ class SignupRegionalController extends Controller
         $conection = \DB::connection('mysql_las');
 
        // $response = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email' and type=0");
-        $response = $conection->select("SELECT correo FROM nikkenla_marketing.control_ci where correo = '$email'");
+        $response = $conection->select("SELECT correo FROM nikkenla_marketing.control_ci_test where correo = '$email'");
 
         \DB::disconnect('mysql_las');
 
@@ -51,19 +51,19 @@ class SignupRegionalController extends Controller
         $conection = \DB::connection('mysql_las');
 
                // $response = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email' and type=0");
-        $response_contratcs = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email'");
+        $response_contratcs = $conection->select("SELECT email FROM nikkenla_incorporation.contracts_test where email = '$email'");
 
         \DB::disconnect('mysql_las');
                 if ($response_contratcs) {
 
                    echo '0';
                 }else{
-                        $conection = \DB::connection('mysql_la_users');
+                        $conection = \DB::connection('mysql_tv');
 
                        // $response = $conection->select("SELECT email FROM nikkenla_incorporation.contracts where email = '$email' and type=0");
-                        $response_users = $conection->select("SELECT email FROM mitiendanikken.users where email = '$email'");
+                        $response_users = $conection->select("SELECT email FROM users where email = '$email'");
 
-                        \DB::disconnect('mysql_la_users');
+                        \DB::disconnect('mysql_tv');
                         if ($response_users) {
                             echo '2';
                         }else{
@@ -458,11 +458,18 @@ public function storePeru(Request $request){
 	$birthdate = explode('-', $birthdate);
 	$birthdate = $birthdate[2].'-'.$birthdate[1].'-'.$birthdate[0];
 	$titular_name = $request->input('name_titular').trim("");
-    $titular_name_ape = $request->input('name_titular_ape').trim("");
+    $titular_name_ape = $request->input('apename').trim("");
     $titular_name=$titular_name.", ".$titular_name_ape;
     $titular_name = strtoupper($titular_name);
-    $titular_name_jur = $request->input('name_titular_jur').trim("");
+    $titular_name_empresa = $request->input('namelegarrepresentative').trim("");
+    $titular_name_empresa = strtoupper($titular_name_empresa);
+    if ($titular_name == '') {
+    	echo "es empresa"
+    	exit;
+    }
+
 	$email = $request->input('email').trim("");
+
 	$email=strtolower($email);
 	$gender = $request->input('gender').trim("");
 	$cel = $request->input('cel').trim("");
