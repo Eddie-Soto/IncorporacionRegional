@@ -93,6 +93,7 @@ class SignupRegionalController extends Controller
         $conection = \DB::connection('mysql_las');
 
         $playeras = $conection->select("SELECT * FROM nikkenla_incorporation.cat_shirts WHERE pais = '$pais' AND genero = '$gender' ");
+        dd($playeras);
 
         \DB::disconnect('mysql_las');
 
