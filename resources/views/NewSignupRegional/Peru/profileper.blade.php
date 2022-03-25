@@ -336,7 +336,7 @@
 
 
 <div class="row" >
-  <div class="col-md-6" id="show-playeras" class="form-control" hidden="true">
+  <div class="col-md-6" id="show-playeras" class="form-control">
 
     <label for=""><span style="color: red !important;">*</span> <b>Elige la talla de tu camiseta</b></label>
 
