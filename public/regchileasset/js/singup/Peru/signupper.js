@@ -132,6 +132,13 @@ function CodeBien(){
 
       }
 
+      function funciontomarcodigo(value){
+  document.getElementById("code-sponsor").value=value;
+  document.getElementById('view-name-sponsor').innerHTML='';
+  Search_sponsor_Valid(value);
+    //alert(value);
+  }
+
 /**
 * Función que busca el sponsor
 */
