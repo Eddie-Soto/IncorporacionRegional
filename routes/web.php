@@ -30,6 +30,8 @@ Route::get('/ciudad','SignupRegionalController@ciudad');
 
 Route::get('/index', 'SignupRegionalController@index');
 
+Route::post('/save', 'SignupRegionalController@storePeru');
+
 Route::get('/profile/mex', 'SignupRegionalController@mexico');
 
 Route::get('/profile/per', 'SignupRegionalController@peru');
