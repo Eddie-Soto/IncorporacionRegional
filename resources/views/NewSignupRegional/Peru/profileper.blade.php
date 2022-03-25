@@ -135,8 +135,8 @@
 
 <div class="row" >
  <div class="col-md-12" id="kits-cb" hidden="true">
-     <label for="kit-cb"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
-     <select class="form-control" name="kit-cb" id="kit" onchange="Ocultar_playeras()">
+     <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
+     <select class="form-control" name="kit-cb" id="kit-cb" onchange="Ocultar_playeras()">
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD</option>
         <option value="5032" >5032 KIT APARTADO</option>
@@ -146,8 +146,8 @@
 <br>
 <div class="row" id="kits">
  <div class="col-md-12" >
-     <label for="kit-ab"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
-     <select class="form-control" name="kit-ab" id="kit" onchange="Ocultar_playeras()">
+     <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
+     <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras()">
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5006">5006 KIT CLÁSICO</option>
         <option value="5023">5023 KIT INFLUENCER  PI WATER</option>

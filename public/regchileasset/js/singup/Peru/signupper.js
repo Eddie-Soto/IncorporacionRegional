@@ -5,9 +5,7 @@ var URLactual = window.location;
 */
 function Ocultar_playeras(){
   var kit = document.getElementById('kit').value;
-  if (kit == "") {
-    alert("no detecta el kit de inicio");
-  }
+  
   var div_opciones=document.getElementById('show-playeras');
   var div_image=document.getElementById('shirt-sample');
   if(kit==5006 || kit=="" || kit==5002 || kit==5031 || kit == 5032){
