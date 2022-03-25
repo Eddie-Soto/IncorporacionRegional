@@ -88,7 +88,7 @@ class SignupRegionalController extends Controller
         	$pais='CHL';
         }
         
-        dd($country);
+        
 
         $conection = \DB::connection('mysql_las');
 
