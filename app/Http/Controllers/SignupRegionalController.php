@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
-
+Use Redirect;
+use \Exception;
+use Aws\S3\S3Client;
+use Aws\S3\S3ClientInterface;
+header("Content-Type: text/html;charset=utf-8");
 class SignupRegionalController extends Controller
 {
 	const S3_SLIDERS_FOLDER = 'PER';
