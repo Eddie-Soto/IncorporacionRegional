@@ -466,7 +466,7 @@ public function storePeru(Request $request){
 	$state = $request->input('state').trim("");
 	$state= str_replace("%", " ", $state);
 	$colony = $request->input('colony').trim("");
-	$colony = str_replace("%", " ", $municipality);
+	$colony = str_replace("%", " ", $colony);
 	$city = $request->input('city').trim("");
 	$city = str_replace("%", " ", $city);
 	$address = $request->input('adress').trim("");
