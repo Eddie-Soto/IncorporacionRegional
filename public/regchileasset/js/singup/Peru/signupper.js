@@ -112,7 +112,7 @@ function CodeBien(){
         //alert(codigo);
         $.ajax({
           type: "GET",
-          url: URLactual + '/codegood',
+          url: '/codegood',
           dataType: "json",
           data: {
             code: codigo
