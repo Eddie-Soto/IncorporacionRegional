@@ -631,21 +631,29 @@ $name='tsts';
 
 
 	if ($type_incorporation == 0) {
-		$type='CLUB';
+		$type_letter='CLUB';
 		
 	}elseif ($type_incorporation ==1) {
-		$type='CI';
+		$type_letter='CI';
 	}else{
-		$type='CI';
+		$type_letter='CI';
 	}
 
 $conection = \DB::connection('mysql_las');
 
-	$control_ci = $conection->insert("INSERT INTO nikkenla_marketing.control_ci_test (pais, tipo, codigo, nombre, codigop, correo, celular, b1, b2) VALUES ('$country', '$type', '$completecode', '$name', '$sponsor', '$email', '$cel', 1, 1)");
+	$control_ci = $conection->insert("INSERT INTO nikkenla_marketing.control_ci_test (pais, tipo, codigo, nombre, codigop, correo, celular, b1, b2) VALUES ('$country', '$type_letter', '$completecode', '$name', '$sponsor', '$email', '$cel', 1, 1)");
 
 	\DB::disconnect('mysql_las');
 
 	echo $control_ci;
+
+$secret_nikken="";
+$conection = \DB::connection('mysql_tv');
+
+	$tv = $conection->insert("INSERT INTO users (country_id, email, sap_code, sap_code_sponsor, password,secret_nikken, client_type, rank, name, phone, cell_phone, state, status, created_at) values ('$country','$email','$completecode','$sponsor','0','$secret_nikken','$type_letter','Directo','$name','$cel','$cel','$state','1','$creacion')");
+
+	\DB::disconnect('mysql_tv');
+	echo $tv;
 	exit;
 
 	
