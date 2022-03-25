@@ -140,13 +140,12 @@
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD</option>
         <option value="5032" >5032 KIT APARTADO</option>
-
     </select>
 </div>
 </div>
 <br>
-<div class="row" >
- <div class="col-md-12" id="kits">
+<div class="row" id="kits">
+ <div class="col-md-12" >
      <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
      <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras()">
         <option value="">Selecciona un Kit de inicio</option>
