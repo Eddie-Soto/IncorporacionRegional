@@ -76,20 +76,23 @@ class SignupRegionalController extends Controller
         $kit = $request->kit;
 
         $country=$request->country;
+        $pais='';
 
-        if($country == '1') {
-        	$country == 'COL';
-        }elseif ($country == '2') {
-        	$country == 'MEX';
-        }elseif ($country == '3') {
-        	$country == 'PER';
+        if($country=$request->country == '1') {
+        	$pais == 'COL';
+        }elseif ($country=$request->country == '2') {
+        	$pais == 'MEX';
+        }elseif ($country=$request->country == '3') {
+        	$pais == 'PER';
+        }else{
+        	$pais='CHL';
         }
         
         dd($country);
 
         $conection = \DB::connection('mysql_las');
 
-        $playeras = $conection->select("SELECT * FROM nikkenla_incorporation.cat_shirts WHERE pais = '$country' AND genero = '$gender' ");
+        $playeras = $conection->select("SELECT * FROM nikkenla_incorporation.cat_shirts WHERE pais = '$pais' AND genero = '$gender' ");
 
         \DB::disconnect('mysql_las');
 
