@@ -446,39 +446,70 @@ public function storePeru(Request $request){
 
 	$creacion = date("Y-m-d H:i:s");
 	$country = $request->input('country').trim("");
+	$type_incorporation = $request->input('type_inc').trim("");
+	$kit= $request->input('kit').trim("");
+    $kit3= $request->input('kit-cb').trim("");
+    $type_per = $request->input('type_per').trim("");
 	$birthdate = $request->input('date_born').trim("");
 	$birthdate = explode('-', $birthdate);
 	$birthdate = $birthdate[2].'-'.$birthdate[1].'-'.$birthdate[0];
+	$titular_name = $request->input('name_titular').trim("");
+    $titular_name_ape = $request->input('name_titular_ape').trim("");
+    $titular_name=$titular_name.", ".$titular_name_ape;
+    $titular_name = strtoupper($titular_name);
+    $titular_name_jur = $request->input('name_titular_jur').trim("");
 	$email = $request->input('email').trim("");
 	$email=strtolower($email);
-	$state = $request->input('region').trim("");
+	$gender = $request->input('gender').trim("");
+	$cel = $request->input('cel').trim("");
+    $cel_jur = $request->input('cel_jur').trim("");
+	$state = $request->input('state').trim("");
 	$state= str_replace("%", " ", $state);
-	$municipality = $request->input('comuna').trim("");
+	$municipality = $request->input('colony').trim("");
 	$municipality = str_replace("%", " ", $municipality);
-	$city = $request->input('ciudad').trim("");
+	$city = $request->input('city').trim("");
 	$city = str_replace("%", " ", $city);
+	$address = $request->input('adress').trim("");
+	$typedocument = $request->input('typedocument').trim("");
+	$numberdocument = $request->input('numberdocument').trim("");
+	$playera=$request->input('shirt-size').trim("");
+    $talla="";
+    
+    $type_sponsor = $request->input('type_sponsor').trim("");
+    if($type_sponsor == "3"){
+                 $sponsor = $this->Assigned_sponsor('Ciudadano Chile',$email,$cel,$country,$state,$platform,$user);
+                 if($sponsor == 0){  
+                    $sponsor = 0;
+                }
+                //$sponsor = Assigned_sponsor($titular_name,$email,$cel,$country,$state,$platform,$user);
+            }
+            else{
+                $sponsor = $request->input('code-sponsor').trim("");
+                if($sponsor == 0){  
+                    $sponsor = 0;
+                }
+            }
+$bank_name = $request->input('bank_name').trim("");
+    $type_account = $request->input('type_acount').trim("");
+    if ($bank_name == "" and $type_account == "") {
+        $bank_name = 0;
+        $type_account = 0;
+    }
+    $numer_account = $request->input('number_account').trim("");
 	if ($bank_name == "" and $type_account == "") {
 		$bank_name = 0;
 		$type_account = 0;
 	}
 	
-	if($type_sponsor == "3"){
-		$sponsor = $this->Assigned_sponsor('Ciudadano Chile',$email,$cel,$country,$state,$platform,$user);
-		if($sponsor == 0){  
-			$sponsor = 0;
-		}
-                //$sponsor = Assigned_sponsor($titular_name,$email,$cel,$country,$state,$platform,$user);
-	}
-	else{
-		$sponsor = $request->input('code-sponsor').trim("");
-		if($sponsor == 0){  
-			$sponsor = 0;
-		}
-	}
+
+	$ckeck_cotitular = $request->input('info_cotitular').trim("");
+    $cotitular_name = $request->input('name_cotitular').trim("");
+    $rut_cotitular = $request->input('rut_cotitular').trim("");
+	
 
 	$conection = \DB::connection('mysql_las');
 
-	$consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.consecutive_codes order by code DESC limit 1");
+	$consecutive = $conection->select("SELECT code FROM nikkenla_incorporation.consecutive_codes_test order by code DESC limit 1");
 
 	\DB::disconnect('mysql_las');
 
@@ -486,7 +517,7 @@ public function storePeru(Request $request){
 	$last_digits="03";
 	$completecode = $nuevocode.$last_digits;
 	$conection = \DB::connection('mysql_las');
-	$consecutive = $conection->insert("INSERT INTO nikkenla_incorporation.consecutive_codes (code) VALUES ('$nuevocode')");
+	$consecutive = $conection->insert("INSERT INTO nikkenla_incorporation.consecutive_codes_test (code) VALUES ('$nuevocode')");
 	\DB::disconnect('mysql_las');
 	$ip = $_SERVER["REMOTE_ADDR"];
 	$browser = $_SERVER['HTTP_USER_AGENT'];
@@ -501,7 +532,7 @@ public function storePeru(Request $request){
 	if ($kit == 5002 || $kit=="5002") {
 
 		$conection = \DB::connection('mysql_las');
-		$user_promotion_exist = $conection->select("SELECT code_ticket FROM nikkenla_incorporation.user_promotion_kit where code_ticket = '$boleto'");
+		$user_promotion_exist = $conection->select("SELECT code_ticket FROM nikkenla_incorporation.user_promotion_kit_TEST where code_ticket = '$boleto'");
 		\DB::disconnect('mysql_las');
 
 		if ($user_promotion_exist) {
@@ -584,9 +615,24 @@ public function storePeru(Request $request){
 
 	$conection = \DB::connection('mysql_las');
 
-	$signupfiles = $conection->select("INSERT INTO  nikkenla_incorporation.signupfiles (sap_code,name,filepath,country_id,created_at) VALUES ('$completecode','$titular_name','$urlscompletes','10','$creacion')");
+	$signupfiles = $conection->select("INSERT INTO  nikkenla_incorporation.signupfiles (sap_code,name,filepath,country_id,created_at) VALUES ('$completecode','$titular_name','$urlscompletes','3','$creacion')");
 
 	\DB::disconnect('mysql_las');
+
+$name='tsts';
+	$conection = \DB::connection('mysql_las');
+
+	$signupfiles = $conection->insert("INSERT INTO nikkenla_incorporation.contracts_test (id_contract, country, code, name, type, type_incorporate, type_sponsor, sponsor, email, cellular, birthday, address, residency_one, residency_two, residency_three, residency_four, name_legal_representative, type_document, number_document, name_cotitular, type_document_cotitular, number_document_cotitular, bank, bank_type, number_account, number_clabe, rfc, ip, browser, gender, kit, playera, talla, verify_digit, separate_name) VALUES ('$id', '$country', $completecode, $name, '$type_incorporation', '$type_per', '$type_sponsor', '$sponsor', '$email', '$cel', '$birthdate', '$address', '', '$state', '$city','$colony', '', 'typedocument', '$numberdocument', '', '', '', '', '', '', '', '', '$ip', '$browser', '$gender', '$kit', '$playera', $talla, '03', 'name separate')");
+
+	\DB::disconnect('mysql_las');
+
+	echo $signupfiles;
+	exit;
+
+	
+
+
+
 
 }
 
