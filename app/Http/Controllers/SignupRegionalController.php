@@ -76,6 +76,13 @@ class SignupRegionalController extends Controller
         $kit = $request->kit;
 
         $country=$request->country;
+        if ($country == 1) {
+        	$country == 'COL';
+        }elseif ($country == 2) {
+        	$country == 'MEX';
+        }elseif ($country == 3) {
+        	$country == 'PER';
+        }
         
 
         $conection = \DB::connection('mysql_las');
