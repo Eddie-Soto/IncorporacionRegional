@@ -466,11 +466,12 @@ public function storePeru(Request $request){
     if ($type_per == 0) {
     	$name=$titular_name_empresa;
 
-    	echo "es empresa".$titular_name_empresa;
+    	echo "es empresa".$name;
 
     	exit;
     }else{
     	$name=$titular_name;
+    	echo "es natural".$name;
     }
 
 	$email = $request->input('email').trim("");
