@@ -464,9 +464,13 @@ public function storePeru(Request $request){
     $titular_name_empresa = $request->input('name-legal-representative').trim("");
     $titular_name_empresa = strtoupper($titular_name_empresa);
     if ($type_per == 0) {
+    	$name=$titular_name_empresa;
+
     	echo "es empresa".$titular_name_empresa;
 
     	exit;
+    }else{
+    	$name=$titular_name;
     }
 
 	$email = $request->input('email').trim("");
