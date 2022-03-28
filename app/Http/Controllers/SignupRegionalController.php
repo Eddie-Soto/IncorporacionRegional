@@ -461,21 +461,23 @@ public function storePeru(Request $request){
     $titular_name_ape = $request->input('apename').trim("");
     $titular_name=$titular_name.", ".$titular_name_ape;
     $titular_name = strtoupper($titular_name);
-    $titular_name_empresa = $request->input('name-legal-representative').trim("");
+    $titular_name_empresa = $request->input('namelegarrepresentative').trim("");
     $titular_name_empresa = strtoupper($titular_name_empresa);
     $name="";
     
     if ($type_per == "0") {
     	$name=$titular_name_empresa;
 
-    	echo "es empresa";
+    	echo "es empresa".$name;
 
     	
     }elseif ($type_per == "1") {
-    	echo "es natural";
+    	$name=$titular_name;
+    	echo "es natural".$name;
     }
     elseif ($type_per == "2") {
-    	echo "es natural con negocio";
+    	$name=$titular_name;
+    	echo "es natural con negocio".$name;
     }
     else{
     	echo "no encontro el tipo de persona";
