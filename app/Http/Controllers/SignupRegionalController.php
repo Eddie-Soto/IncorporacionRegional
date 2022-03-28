@@ -468,12 +468,12 @@ public function storePeru(Request $request){
 
     	echo "es empresa".$name;
 
-    	exit;
+    	
     }else{
     	$name=$titular_name;
     	echo "es natural".$name;
     }
-
+exit;
 	$email = $request->input('email').trim("");
 
 	$email=strtolower($email);
