@@ -134,6 +134,11 @@ NIKKEN.</div>
     </div>
 </div>
 
+<div class="row">
+        <div class="col-md-12"> 
+                <center><p><strong> Kit de Influencer sujeto a percepción 2% adicional </strong></p></center>
+        </div>
+</div>
 
 <div class="row" >
  <div class="col-md-12" id="kits-cb" hidden="true">
@@ -151,10 +156,10 @@ NIKKEN.</div>
      <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
      <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras()">
         <option value="">Selecciona un Kit de inicio</option>
-        <option value="5006">5006 KIT CLÁSICO</option>
-        <option value="5023">5023 KIT INFLUENCER  PI WATER</option>
-        <option value="5024">5024 KIT INFLUENCER  WATERFALL</option>
-        <option value="5027">5027 KIT INFLUENCER  + PIMAG OPTIMIZER</option>
+        <option value="5006">5006 KIT CLÁSICO S/ 415.00</option>
+        <option value="5023">5023 KIT INFLUENCER  PI WATER S/ 854.00</option>
+        <option value="5024">5024 KIT INFLUENCER  WATERFALL S/ 1,658.00</option>
+        
 
     </select>
 </div>
@@ -480,7 +485,7 @@ function cl_or_abi(value){
         document.getElementById('show-playeras').removeAttribute('hidden',true);
         document.getElementById('shirt-sample').removeAttribute('hidden',true);
         document.getElementById('kits-cb').setAttribute('hidden',true);
-        div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si has seleccionado Asesor de Bienestar, y desarrollarás el Negocio, elige algunas de estas opciones de tipo de persona según sea tu caso!</div>";
+        div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Corregir la descripción: Si has seleccionado ASESOR DE BIENESTAR, te interesa compartir el concepto de bienestar y obtener beneficios desarrollando el negocio NIKKEN.</div>";
 
     }else if(value == "0"){
         document.getElementById('abi').removeAttribute('hidden',true);
@@ -490,7 +495,7 @@ function cl_or_abi(value){
         document.getElementById('show-playeras').setAttribute('hidden',true);
         document.getElementById('shirt-sample').setAttribute('hidden',true);
         document.getElementById('kits-cb').removeAttribute('hidden',true);
-        div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si eres Empresa y no desarrollarás  Negocio, debes registrarte como Club de Bienestar ( Recibes factura).</div>";
+        div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si has seleccionado CLUB DE BIENESTAR, eres cliente, NO desarrollarás el negocio y solicitas comprobante de venta (boleta o factura).</div>";
     }
 }
 cl_or_abi(1);
