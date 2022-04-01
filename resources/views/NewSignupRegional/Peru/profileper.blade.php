@@ -115,7 +115,7 @@ NIKKEN.</div>
                 <div class="position-relative text-center">
                     <a href="" onclick="Tracking('ES - Influencer de Bienestar');" target="_blank">
                         <img src="https://nikkenlatam.com/site/custom/img/general/logo-influencer-bienestar-nikken.png?2.0.0" alt="Logo Influencer de Bienestar NIKKEN" width="40%" class="img-fluid" title="Influencer de Bienestar NIKKEN">
-                        <p class="mt-4 pt-3 h4 mb-5 md-sm-8">Comparte y obtén <span class="d-block">mayores beneficios</span></p>
+                        <p class="mt-4 pt-3 h6 mb-5 md-sm-8">Comparte y obtén <span class="d-block">mayores beneficios</span></p>
                     </a>
                 </div>
             </div>
@@ -123,8 +123,8 @@ NIKKEN.</div>
             <div class="col-12 col-sm-6">
                 <div class="position-relative text-center">
                     <a href="" onclick="Tracking('ES - Miembro NIKKEN');" target="_blank">
-                        <img src="https://nikkenlatam.com/site/custom/img/general/logo-miembro-nikken.png" class="img-fluid" alt="Logo miembro NIKKEN" title="Miembro NIKKEN">
-                        <p class="h4 mb-5 md-sm-8">Vive la experiencia <span class="d-block">del bienestar NIKKEN</span></p>
+                        <img src="https://nikkenlatam.com/site/custom/img/general/logo-miembro-nikken.png" class="img-fluid" alt="Logo miembro NIKKEN" width="40%"  title="Miembro NIKKEN">
+                        <p class="h6 mb-5 md-sm-8">Vive la experiencia <span class="d-block">del bienestar NIKKEN</span></p>
                     </a>
                 </div>
             </div>
