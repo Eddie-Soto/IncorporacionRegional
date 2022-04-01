@@ -108,7 +108,7 @@ NIKKEN.</div>
 
  <div class="row">
     <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <h2 class="mb-3 text-green pb-5 text-center"><span class="font-weight-normal">Únete a esta gran comunidad de bienestar</span></h2>
+        <h4 class="mb-3 text-green pb-5 text-center"><span class="font-weight-normal"><strong>Únete</strong> a esta gran comunidad de bienestar</span></h4>
 
         <div class="row d-flex align-items-center">
             <div class="col-12 col-sm-6">
