@@ -70,7 +70,9 @@
     <!--CAMBIO MENSAJE CHILE-->
     <div class="row">
         <div class="col-md-12" id="cborabitxt">
-            <div class='alert alert-info' role='alert'>Si has seleccionado Asesor de Bienestar, y desarrollarás el Negocio, elige algunas de estas opciones de tipo de persona según sea tu caso!</div>
+            <div class='alert alert-info' role='alert'>Corregir la descripción: Si has seleccionado ASESOR DE BIENESTAR, te interesa
+compartir el concepto de bienestar y obtener beneficios desarrollando el negocio
+NIKKEN.</div>
         </div>
     </div>
 
@@ -112,7 +114,7 @@
             <div class="col-12 col-sm-6">
                 <div class="position-relative text-center">
                     <a href="" onclick="Tracking('ES - Influencer de Bienestar');" target="_blank">
-                        <img src="https://nikkenlatam.com/site/custom/img/general/logo-influencer-bienestar-nikken.png?2.0.0" alt="Logo Influencer de Bienestar NIKKEN" class="img-fluid" title="Influencer de Bienestar NIKKEN">
+                        <img src="https://nikkenlatam.com/site/custom/img/general/logo-influencer-bienestar-nikken.png?2.0.0" alt="Logo Influencer de Bienestar NIKKEN" width="40%" class="img-fluid" title="Influencer de Bienestar NIKKEN">
                         <p class="mt-4 pt-3 h4 mb-5 md-sm-8">Comparte y obtén <span class="d-block">mayores beneficios</span></p>
                     </a>
                 </div>
