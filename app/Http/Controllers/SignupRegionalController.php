@@ -14,6 +14,22 @@ class SignupRegionalController extends Controller
 	const S3_SLIDERS_FOLDER = 'PER';
 	const S3_OPTIONS = ['disk' => 's3', 'visibility' => 'public'];
 
+    /**
+    * Función que consulta el nombre de los bancos para ser mostrados en la vista
+    */
+    public function getbanks(Request $request){
+        $pais=$request->pais;
+
+        $conection = \DB::connection('mysql_las');
+
+        $bank = $conection->select("SELECT id_bank, name FROM nikkenla_office.control_banks where country = '$pais' order by name ASC");
+
+        \DB::disconnect('mysql_las');
+
+        return \json_encode($bank);
+
+    }
+
 	public function index(Request $request){
 
 		return view('NewSignupRegional.index');

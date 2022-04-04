@@ -23,6 +23,7 @@ Route::get('/playeras', 'SignupRegionalController@playeras');
 Route::get('/email', 'SignupRegionalController@validateEmail');
 
 Route::get('/typedocuments', 'SignupRegionalController@gettypeDocuments');
+Route::get('/banks', 'SignupRegionalController@getbanks');
 
 Route::get('/states','SignupRegionalController@states');
 Route::get('/municipality','SignupRegionalController@municipality');

@@ -297,6 +297,7 @@ NIKKEN.</div>
             <div class="row">
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                     <h4>Copia de Identificación</h4>
+                    <p style="font-size: 12px; color: red !important;"><span style="color: red !important;" class="flaticon-warning"></span>Solo se admiten archivos con extención JPG,JPEG,PNG y PDF.</p>
                 </div>      
             </div>
         </div>
@@ -320,6 +321,7 @@ NIKKEN.</div>
             <div class="row">
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                     <h4>Copia de Identificación</h4>
+                    <p style="font-size: 12px; color: red !important;"><span style="color: red !important;" class="flaticon-warning"></span>Solo se admiten archivos con extención JPG,JPEG,PNG y PDF.</p>
                 </div>      
             </div>
         </div>

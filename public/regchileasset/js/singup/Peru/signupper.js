@@ -1,5 +1,31 @@
 var URLactual = window.location;
 
+
+/**
+* Función que obtiene los bancos 
+*/
+function getBanks(){
+  var country = $('#country').val();
+  $.ajax({
+    type: "GET",
+    url: '/banks',
+    dataType: "json",
+    data: {
+      pais: country
+    },
+    success: function(data){
+      $.each(data,function(key, registro) {
+        $("#bank_name").append('<option value='+registro.id_bank+'>'+registro.name+'</option>');
+      });
+    },
+    error: function(data) {
+
+    }
+  });
+
+}
+
+
 /**
 * Función que muestra la playera si es que eligio el tipo de incorporación
 */
@@ -25,7 +51,7 @@ function showShirtSample(){
      if(item == ""){
       divSample.innerHTML="";
     }else{
-     divSample.innerHTML = "<br><img class='img-thumbnail' src='../../regchileasset/img/playera.png' width='100%' name='shirt-sample'>";
+     divSample.innerHTML = "<br><img class='img-thumbnail' src='https://iw.nikkenlatam.com:8787/peru/img/peru.png' width='100%' name='shirt-sample'>";
    }
        // divSample.innerHTML = "<br><img src='../../regchileasset/img/f.png' width='100%' name='shirt-sample'>";
      }
@@ -635,6 +661,7 @@ function getDocuments(){
 $( document ).ready(function() {
 
   getStates();
+  getBanks();
 
         //document.getElementById("btnProfile").disabled = true;
       });
