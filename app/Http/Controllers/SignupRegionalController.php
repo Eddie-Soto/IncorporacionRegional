@@ -569,7 +569,7 @@ $bank_name = $request->input('bank_name').trim("");
 		}
 
 		$conection = \DB::connection('mysql_las');
-		$user_promotion = $conection->insert("INSERT INTO nikkenla_incorporation.user_promotion_kit (code_sponsor, code_redeem, kit, status, country_id, code_ticket, created_at) VALUES ('$sponsor','$completecode','$kit','2','10','$boleto','$creacion')");
+		$user_promotion = $conection->insert("INSERT INTO nikkenla_incorporation.user_promotion_kit_TEST (code_sponsor, code_redeem, kit, status, country_id, code_ticket, created_at) VALUES ('$sponsor','$completecode','$kit','2','10','$boleto','$creacion')");
 		\DB::disconnect('mysql_las');
 	}
 	/*
@@ -685,7 +685,14 @@ $conection = \DB::connection('mysql_tv');
 	$kit= $request->input('kit').trim("");
             $kit_complete=$kit.':1';
             $products_two=$kit_complete.';'.$playera.':1';
-            return $this->checkOutAbi($email,$products_two);
+
+
+            if ($type_incorporation == 0) {
+                return $this->checkOutClub($email);
+            }else{
+                return $this->checkOutAbi($email,$products_two);
+            }
+            
 
 	
 
@@ -731,7 +738,7 @@ public function checkOutClubApartado($email){
         $data = base64_encode($email);
 
         /*Generamos la url del checkourt referenciado a wootbit*/
-        $url = "https://mitiendanikken.com/mitiendanikken/auto/login/". base64_encode($email)."?force_change=".base64_encode('1441:14412');
+        $url = "https://test.mitiendanikken.com/mitiendanikken/auto/login/". base64_encode($email)."?force_change=".base64_encode('1441:14412');
 
 
         return Redirect::to($url);
