@@ -28,6 +28,9 @@
         <label for="bank_name"> <b>TIPO DE CUENTA</b></label>
         <select id="bank_name" name="bank_name" class="form-control">
             <option value="">{{ __('auth.selbankname') }}</option>
+            <option value="5">Ahorros</option>
+            <option value="6">Corriente</option>
+            <option value="17">Maestra</option>
         </select>
     </div>
     
