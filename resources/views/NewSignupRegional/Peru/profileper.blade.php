@@ -371,7 +371,8 @@ NIKKEN.</div>
 
 <div class="row">
     <div class="col-sm-12">
-        <label id="option-sponsor-one"><input type="radio" id="opc1" value="1" name="type_sponsor" onclick="Opacity_type_sponsor(this.value);" >&nbsp;<strong>{{ __('auth.type_sponsor_one') }}</strong><br/><small>{{ __('auth.type_sponsor_ones') }}</small></label>
+        <label id="option-sponsor-one"><input type="radio" id="opc1" value="1" name="type_sponsor" onclick="Opacity_type_sponsor(this.value);" >&nbsp;<strong>{{ __('auth.type_sponsor_one') }}</strong><br/><small>{{ __('auth.type_sponsor_ones') }}</small></label><br>
+        <small>Ingresa aquí el código aquí</small></label>
         <div class="row">
 
             <div class="col-sm-5">
