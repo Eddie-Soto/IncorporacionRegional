@@ -428,7 +428,7 @@ NIKKEN.</div>
                         <span class="slider round"></span>
                     </label>
                     <br>
-                    <a href="{{ asset('regchileasset/Politicas_Chile.pdf') }}"  target="_blank">
+                    <a href="https://vivenikken.s3.amazonaws.com/pdf/others/Per%C3%BA/Privacy+policy.pdf"  target="_blank">
                         <label><u style="text-decoration: none; border-bottom: 1px solid black;">{{ __('auth.privacy_policy') }}</u></label></a>
                     </div>
                 </strong>
@@ -452,7 +452,7 @@ NIKKEN.</div>
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row" hidden="true">
     <div class="col-sm-12">
     <p>Queremos conocerte mejor y saber que es lo que más te interesa en NIKKEN:</p>
   <input type="radio" id="segmentacion" name="segmentacion" value="10" checked="true">
