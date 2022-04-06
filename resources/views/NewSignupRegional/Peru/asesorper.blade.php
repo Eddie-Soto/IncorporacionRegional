@@ -19,7 +19,7 @@
 <div class="row" id="check_bank" hidden="true">
     <div class="col-md-6" id="">
         <label for="bank_name"> <b>{{ __('auth.name_bank') }}</b></label>
-        <select id="bank_name" name="bank_name" class="form-control">
+        <select id="bank_name" name="bank_name" class="form-control" onchange="bank(this.value);">
             <option value="">{{ __('auth.selbankname') }}</option>
         </select>
     </div>
@@ -34,12 +34,12 @@
         </select>
     </div>
     
-    <div class="col-md-6">
+    <div class="col-md-6" id="numberaccount" hidden="true">
         <label for="number_account"><span style="color: red !important;">*</span> <b>{{ __('auth.number_account') }}</b></label>
         <input type="text" id="number_account" name="number_account" class="form-control">
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6" id="cci">
         <label for="number_account"><span style="color: red !important;">*</span> <b>CCI:</b></label>
         <input type="text" id="number_account" name="number_account" class="form-control">
     </div>
@@ -80,3 +80,18 @@
 </div>
 <br>
 
+<script type="text/javascript">
+    function bank(banco){
+        var divnumaccount = document.getElementById('numberaccount');
+        var divcci = document.getElementById('cci');
+        if (banco == 46) {
+            divnumaccount.removeAttribute('hidden',true);
+            divcci.setAttribute('hidden',true);
+        }else{
+            divcci.removeAttribute('hidden',true);
+            divnumaccount.setAttribute('hidden',true);
+            
+        }
+
+    }
+</script>
