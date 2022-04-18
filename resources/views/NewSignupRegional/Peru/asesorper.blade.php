@@ -102,11 +102,11 @@
         var type_acount = document.getElementById('bank_name');
         if (banco == 46) {
             if (type_acount == 5) {
-                num_cuenta.setAttribute('maxLength',14);
-                num_cuenta.setAttribute('minLength',14);
+                num_cuenta.setAttribute('maxlength',14);
+                num_cuenta.setAttribute('minlength',14);
             }else{
-                num_cuenta.setAttribute('maxLength',13);
-                num_cuenta.setAttribute('minLength',13);
+                num_cuenta.setAttribute('maxlength',13);
+                num_cuenta.setAttribute('minlength',13);
             }
 
             divnumaccount.removeAttribute('hidden',true);
