@@ -116,7 +116,7 @@ function cl_or_abi(value){
     document.getElementById('show-playeras').removeAttribute('hidden',true);
     document.getElementById('shirt-sample').removeAttribute('hidden',true);
 
-    div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si has seleccionado Asesor de Bienestar, y desarrollarás el Negocio, elige algunas de estas opciones de tipo de persona según sea tu caso!</div>";
+    div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si has seleccionado ASESOR DE BIENESTAR, te interesa compartir el concepto de bienestar y obtener beneficios desarrollando el negocio NIKKEN.</div>";
 
   }else if(value == "0"){
     document.getElementById('abi').removeAttribute('hidden',true);
@@ -128,7 +128,7 @@ function cl_or_abi(value){
     document.getElementById('shirt-sample').setAttribute('hidden',true);
     
 
-    div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si eres Empresa y no desarrollarás  Negocio, debes registrarte como Club de Bienestar ( Recibes factura).</div>";
+    div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si has seleccionado CLUB DE BIENESTAR, eres cliente, NO desarrollarás el negocio y solicitas comprobante de venta (boleta o factura).</div>";
     
   }
 }
