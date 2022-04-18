@@ -101,6 +101,7 @@
         
         var num_cuenta = document.getElementById('number_account');
         var type_acount = document.getElementById('type_Account');
+        alert(type_acount);
         if (banco == 46) {
             if (type_acount == 5) {
                 num_cuenta.maxLength = "14"
