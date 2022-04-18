@@ -143,7 +143,7 @@ NIKKEN.</div>
 <div class="row" >
  <div class="col-md-12" id="kits-cb" hidden="true">
      <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
-     <select class="form-control" name="kit-cb" id="kit-cb" onchange="Ocultar_playeras()">
+     <select class="form-control" name="kit-cb" id="kit-cb" onchange="Ocultar_playeras(); getDataShirt();">
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD</option>
         <option value="5032" >5032 KIT APARTADO</option>
@@ -154,7 +154,7 @@ NIKKEN.</div>
 <div class="row" id="kits">
  <div class="col-md-12" >
      <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
-     <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras()">
+     <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras(); getDataShirt();">
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5006">5006 KIT CLÁSICO S/ 415.00</option>
         <option value="5023">5023 KIT INFLUENCER  PI WATER S/ 854.00</option>
@@ -298,6 +298,7 @@ NIKKEN.</div>
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                     <h4>Copia de Identificación</h4>
                     <p style="font-size: 12px; color: red !important;"><span style="color: red !important;" class="flaticon-warning"></span>Solo se admiten archivos con extención JPG,JPEG,PNG y PDF.</p>
+                    <p style="font-size: 12px; color: red !important;"><span style="color: red !important;" class="flaticon-warning"></span>El tamaño maximo del archivo es de 5MB</p>
                 </div>      
             </div>
         </div>
@@ -322,6 +323,7 @@ NIKKEN.</div>
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                     <h4>Copia de Identificación</h4>
                     <p style="font-size: 12px; color: red !important;"><span style="color: red !important;" class="flaticon-warning"></span>Solo se admiten archivos con extención JPG,JPEG,PNG y PDF.</p>
+                    <p style="font-size: 12px; color: red !important;"><span style="color: red !important;" class="flaticon-warning"></span>El tamaño maximo del archivo es de 5MB</p>
                 </div>      
             </div>
         </div>

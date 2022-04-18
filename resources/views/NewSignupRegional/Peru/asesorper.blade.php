@@ -26,7 +26,7 @@
 
     <div class="col-md-6" id="">
         <label for="bank_name"> <b>TIPO DE CUENTA</b></label>
-        <select id="bank_name" name="bank_name" class="form-control">
+        <select id="bank_name" name="bank_name" class="form-control" onchange="ValidateBanks();">
             <option value="">{{ __('auth.selbankname') }}</option>
             <option value="5">Ahorros</option>
             <option value="6">Corriente</option>
@@ -84,6 +84,8 @@
     function bank(banco){
         var divnumaccount = document.getElementById('numberaccount');
         var divcci = document.getElementById('cci');
+        var num_cuenta = document.getElementById('number_account');
+        var type_acount = document.getElementById('bank_name');
         if (banco == 46) {
             divnumaccount.removeAttribute('hidden',true);
             divcci.setAttribute('hidden',true);
@@ -93,5 +95,22 @@
             
         }
 
+    }
+    function ValidateBanks(){
+        var banco=document.getElementById('bank_name');
+        var num_cuenta = document.getElementById('number_account');
+        var type_acount = document.getElementById('bank_name');
+        if (banco == 46) {
+            if (type_acount == 5) {
+                num_cuenta.setAttribute('maxLength',14);
+                num_cuenta.setAttribute('minLength',14);
+            }else{
+                num_cuenta.setAttribute('maxLength',13);
+                num_cuenta.setAttribute('minLength',13);
+            }
+
+            divnumaccount.removeAttribute('hidden',true);
+            divcci.setAttribute('hidden',true);
+        }
     }
 </script>
