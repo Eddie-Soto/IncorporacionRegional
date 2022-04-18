@@ -98,6 +98,8 @@
     }
     function ValidateBanks(){
         var banco=document.getElementById('bank_name');
+        alert(banco);
+        
         var num_cuenta = document.getElementById('number_account');
         var type_acount = document.getElementById('bank_name');
         if (banco == 46) {
