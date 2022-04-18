@@ -97,7 +97,7 @@
 
     }
     function ValidateBanks(){
-        var banco=document.getElementById('bank_name');
+        var banco=document.getElementById('bank_name').value;
         alert(banco);
         
         var num_cuenta = document.getElementById('number_account');
@@ -110,8 +110,7 @@
                 num_cuenta.maxLength = "13"
             }
 
-            divnumaccount.removeAttribute('hidden',true);
-            divcci.setAttribute('hidden',true);
+            
         }
     }
 </script>
