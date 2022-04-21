@@ -1,4 +1,4 @@
-@extends('NewSignupRegional.layoutper')
+@extends('NewSignupRegional.layoutecu')
 
 @section('title', 'Registro')
 
@@ -368,7 +368,7 @@ NIKKEN.</div>
 
 <br>
 <section id="abi" hidden="true">
-    @include('NewSignupRegional.Peru.asesorper')
+    @include('NewSignupRegional.Ecuador.asesorecu')
 </section>
 
 <div class="row">

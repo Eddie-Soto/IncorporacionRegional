@@ -50,6 +50,14 @@
                     <br>
                     <label for="inputEmail" class="text-center"><b>Colombia</b></label>
                 </div>
+                <div class="form-group col-md-3">
+
+                    <a href="/profile/ecu/" value="es">
+                        <img src="{{asset('regchileasset/img/ecu.png')}}" class="img_country rounded bs-toolti"  data-toggle="tooltip" data-placement="left" title="Ecuador">
+                    </a>
+                    <br>
+                    <label for="inputEmail" class="text-center"><b>Ecuador</b></label>
+                </div>
             </div>
         </div>
     </div>
