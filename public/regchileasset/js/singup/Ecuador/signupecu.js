@@ -544,8 +544,8 @@ function getStates(){
     success: function(data){
       $("#state").find('option').remove();
       $("#state").append('<option value="" selected>Selecciona una opción</option>');
-      $("#city").append('<option value="" selected>Selecciona una opción</option>');
-      $("#colony").append('<option value="" selected>Selecciona una opción</option>');
+      //$("#city").append('<option value="" selected>Selecciona una opción</option>');
+      //$("#colony").append('<option value="" selected>Selecciona una opción</option>');
       $.each(data,function(key, registro) {
 
         $("#state").append('<option value='+registro.state_name.replace(/ /g, "%")+'>'+registro.state_name+'</option>');

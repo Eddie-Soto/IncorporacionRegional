@@ -172,8 +172,7 @@ NIKKEN.</div>
       <label for="type_per"><span style="color: red !important;">*</span> <b>TIPO DE PERSONA:</b></label>
       <select id="type_per" name="type_per" class="form-control" onchange="getDocuments(); getTypePerson(this.value); ">
         <option value=""></option>
-        <option value="1">Persona natural (Válido solo con DNI)</option>
-        <option value="2">Persona natural con negocio (Válido solo con ficha RUC, aplica para Extranjeros)</option>
+        <option value="1">Persona natural</option>
         <option value="0">Empresa</option>
     </select>
 </div>
@@ -228,24 +227,19 @@ NIKKEN.</div>
 <div class="row">
 
     <div class="col-md-3">
-        <label for="state"><span style="color: red !important;">*</span> <b>Departamento:</b></label>
-        <select id="state"  name="state" class="form-control" onchange="getCities()">
+        <label for="state"><span style="color: red !important;">*</span> <b>Provincia:</b></label>
+        <select id="state"  name="state" class="form-control">
            {{-- <option value="" selected>{{ __('auth.selreg') }}</option>--}}
        </select>
    </div>
 
    <div class="col-md-3">
-      <label for="city"><span style="color: red !important;">*</span> <b>Provincia:</b></label>
-      <select id="city" name="city" class="form-control" onchange="getColony()">
-       {{-- <option value="" selected>{{ __('auth.selreg') }}</option>--}}
-   </select>
-</div>
-<div class="col-md-3">
-    <label for="colony"><span style="color: red !important;">*</span> <b>Distrito:</b> </label>
-    <select id="colony" name="colony" class="form-control">
-        {{--<option value="" selected="">{{ __('auth.selreg') }}</option>--}}
-    </select>
-</div>
+        <label for="city"><span style="color: red !important;">*</span> <b>Ciudad:</b></label>
+        <input type="text" name="city" id="city" class="form-control">
+        
+   </div>
+
+   
 
 </div>
 <!--CHILE CHANGUE CIUDAD-->
