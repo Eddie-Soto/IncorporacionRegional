@@ -31,6 +31,7 @@
             <option value="5">Ahorros</option>
             <option value="6">Corriente</option>
             <option value="17">Maestra</option>
+            <option value="10">Interbancaria</option>
         </select>
     </div>
     
@@ -104,10 +105,12 @@
         alert(type_acount);
         if (banco == 46) {
             if (type_acount == 5) {
-                num_cuenta.maxLength = "14"
+                num_cuenta.maxLength = "14";
                 
+            }else if(type_acount == 10){
+                num_cuenta.maxLength = "20";
             }else{
-                num_cuenta.maxLength = "13"
+                num_cuenta.maxLength = "13";
             }
 
             

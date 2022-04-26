@@ -145,8 +145,8 @@ NIKKEN.</div>
      <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
      <select class="form-control" name="kit-cb" id="kit-cb" onchange="Ocultar_playeras(); getDataShirt();">
         <option value="">Selecciona un Kit de inicio</option>
-        <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD</option>
-        <option value="5032" >5032 KIT APARTADO</option>
+        <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD S/.0.00 (Sujeto a una compra)</option>
+        <option value="5032" >5032 KIT ALCANCÍA ELECTRÓNICA S/.3.60 </option>
     </select>
 </div>
 </div>
