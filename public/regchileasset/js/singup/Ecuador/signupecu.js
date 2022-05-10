@@ -609,10 +609,10 @@ function getDocumentscoti(){
             country: country
           },
           success: function(data){
-            $("#typedocument").find('option').remove();
-            $("#typedocument").append('<option value="" selected>Selecciona tipo de documento</option>');
+            $("#typedocumentcoti").find('option').remove();
+            $("#typedocumentcoti").append('<option value="" selected>Selecciona tipo de documento</option>');
             $.each(data,function(key, registro) {
-              $("#typedocument").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
+              $("#typedocumentcoti").append('<option value='+registro.id_type+'>'+registro.name+'</option>');
             });
           },
           error: function(data) {

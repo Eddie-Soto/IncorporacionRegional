@@ -71,11 +71,20 @@
         <input type="text" id="name_cotitular" name="name_cotitular" class="form-control">
     </div>
 
+    <div class="col-md-6" id="typedocumentscoti">
+      <label for="typedocumentcoti"><span style="color: red !important;">*</span> <b>Tipo de Documento:</b></label>
+      <select id="typedocumentcoti" name="typedocumentcoti" class="form-control" >
+        <option value="">Selecciona Tu Documento</option>
+        
+    </select>
+</div>
+<div class="col-md-6">
+    <label for="numer_document_cotitular"><span style="color: red !important;">*</span> <b>Número de Documento</b></label>
+    <input type="text" id="numer_document_cotitular" name="numer_document_cotitular" minlength="8" maxlength="11" class="form-control">
+</div>
 
-    <div class="col-md-12">
-        <label for="numer_document_cotitular"><span style="color: red !important;">*</span> <b>DNI:</b></label>
-        <input type="text" id="numer_document_cotitular" name="numer_document_cotitular" class="form-control">
-    </div>
+
+    
 
 </div>
 <br>
