@@ -7,7 +7,7 @@
 <div class="row" class="tooltip-section">
     <div class="col-md-12 text-center mb-4">
         <img alt="logo" src="https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-header-black.png" class="theme-logo">
-        <img alt="logo" src="{{asset('regchileasset/img/per.png')}}" width="5%">
+        <img alt="logo" src="{{asset('regchileasset/img/ecu.png')}}" width="5%">
     </div>
     <br>
     <div class="row layout-spacing col-md-12">

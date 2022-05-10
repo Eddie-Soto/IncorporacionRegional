@@ -56,7 +56,7 @@ function showShirtSample(){
        // divSample.innerHTML = "<br><img src='../../regchileasset/img/f.png' width='100%' name='shirt-sample'>";
      }
 
-     function getDataShirt(){
+function getDataShirt(){
     //  var country = document.getElementById('country').value;
     var kit = document.getElementById('kit').value;
     var gender = document.getElementById('gender1').value;
