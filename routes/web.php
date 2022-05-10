@@ -31,7 +31,9 @@ Route::get('/ciudad','SignupRegionalController@ciudad');
 
 Route::get('/index', 'SignupRegionalController@index');
 
-Route::post('/save', 'SignupRegionalController@storePeru');
+Route::post('/saveper', 'SignupRegionalController@storePeru');
+
+Route::post('/saveecu', 'SignupRegionalController@storeEcuador');
 
 Route::get('/profile/mex', 'SignupRegionalController@mexico');
 

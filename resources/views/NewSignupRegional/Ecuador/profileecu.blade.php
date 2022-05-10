@@ -51,7 +51,7 @@
     
 
 
-    <form action="/save" method="post" id="formProfile"  accept-charset="UTF-8"  enctype="multipart/form-data" class="form-control" border="none" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
+    <form action="/saveecu" method="post" id="formProfile"  accept-charset="UTF-8"  enctype="multipart/form-data" class="form-control" border="none" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       
       <div class="row">
@@ -134,7 +134,7 @@ NIKKEN.</div>
     </div>
 </div>
 
-<div class="row">
+<div class="row" hidden="true">
         <div class="col-md-12"> 
                 <center><p><strong> Kit de Influencer sujeto a percepción 2% adicional </strong></p></center>
         </div>
@@ -146,7 +146,7 @@ NIKKEN.</div>
      <select class="form-control" name="kit-cb" id="kit-cb" onchange="Ocultar_playeras(); getDataShirt();">
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD</option>
-        <option value="5032" >5032 KIT APARTADO</option>
+        <option value="5032" >5032 KIT APARTADO $ 1.00</option>
     </select>
 </div>
 </div>
@@ -156,9 +156,9 @@ NIKKEN.</div>
      <label for="kit"><span style="color: red !important;">*</span> <b>Selecciona Tu Kit de Inicio</b></label>
      <select class="form-control" name="kit" id="kit" onchange="Ocultar_playeras(); getDataShirt();">
         <option value="">Selecciona un Kit de inicio</option>
-        <option value="5006">5006 KIT CLÁSICO S/ 415.00</option>
-        <option value="5023">5023 KIT INFLUENCER  PI WATER S/ 854.00</option>
-        <option value="5024">5024 KIT INFLUENCER  WATERFALL S/ 1,658.00</option>
+        <option value="5006">5006 KIT CLÁSICO $ 100.00</option>
+        <option value="5023">5023 KIT INFLUENCER  PI WATER $ 264.00</option>
+        <option value="5024">5024 KIT INFLUENCER  WATERFALL $ 498.00</option>
         
 
     </select>
