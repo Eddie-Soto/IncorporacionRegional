@@ -30,19 +30,16 @@
             <option value="">{{ __('auth.selbankname') }}</option>
             <option value="5">Ahorros</option>
             <option value="6">Corriente</option>
-            <option value="17">Maestra</option>
+            
         </select>
     </div>
     
-    <div class="col-md-6" id="numberaccount" hidden="true">
+    <div class="col-md-6" id="numberaccount">
         <label for="number_account"><span style="color: red !important;">*</span> <b>{{ __('auth.number_account') }}</b></label>
         <input type="text" id="number_account" name="number_account" class="form-control">
     </div>
 
-    <div class="col-md-6" id="cci">
-        <label for="number_account"><span style="color: red !important;">*</span> <b>CCI:</b></label>
-        <input type="text" id="number_account" name="number_account" class="form-control">
-    </div>
+    
 
 </div>
 
@@ -80,7 +77,7 @@
 </div>
 <div class="col-md-6">
     <label for="numer_document_cotitular"><span style="color: red !important;">*</span> <b>Número de Documento</b></label>
-    <input type="text" id="numer_document_cotitular" name="numer_document_cotitular" minlength="8" maxlength="11" class="form-control">
+    <input type="text" id="numer_document_cotitular" name="numer_document_cotitular" minlength="8" maxlength="13" class="form-control">
 </div>
 
 
