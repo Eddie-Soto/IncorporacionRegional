@@ -113,19 +113,19 @@ NIKKEN.</div>
         <div class="row d-flex align-items-center">
             <div class="col-12 col-sm-6">
                 <div class="position-relative text-center">
-                    <a href="#"  target="_blank">
+                   
                         <img src="https://nikkenlatam.com/site/custom/img/general/logo-influencer-bienestar-nikken.png?2.0.0" alt="Logo Influencer de Bienestar NIKKEN" width="40%" class="img-fluid" title="Influencer de Bienestar NIKKEN">
                         <p class="mt-4 pt-3 h6 mb-5 md-sm-8">Comparte y obtén <span class="d-block">mayores beneficios</span></p>
-                    </a>
+                    
                 </div>
             </div>
 
             <div class="col-12 col-sm-6">
                 <div class="position-relative text-center">
-                    <a href="#"  target="_blank">
+                    
                         <img src="https://nikkenlatam.com/site/custom/img/general/logo-miembro-nikken.png" class="img-fluid" alt="Logo miembro NIKKEN" width="40%"  title="Miembro NIKKEN">
                         <p class="h6 mb-5 md-sm-8">Vive la experiencia <span class="d-block">del bienestar NIKKEN</span></p>
-                    </a>
+                    
                 </div>
             </div>
 
@@ -146,7 +146,7 @@ NIKKEN.</div>
      <select class="form-control" name="kit-cb" id="kit-cb" onchange="Ocultar_playeras(); getDataShirt();">
         <option value="">Selecciona un Kit de inicio</option>
         <option value="5031" >5031 KIT MIEMBRO DE LA COMUNIDAD</option>
-        <option value="5032" >5032 KIT APARTADO $ 1.00</option>
+        <option value="5032" >5032 KIT ALCANCIA ELECTRONICA $ 1.00</option>
     </select>
 </div>
 </div>
@@ -273,7 +273,7 @@ NIKKEN.</div>
 </div>
 <div class="col-md-6" id="rut_natural">
     <label for="numberdocument"><span style="color: red !important;">*</span> <b>Número de Documento</b></label>
-    <input type="text" id="numberdocument" name="numberdocument" minlength="8" maxlength="11" class="form-control">
+    <input type="text" id="numberdocument" name="numberdocument" minlength="8" maxlength="13" class="form-control">
 </div>
 <div class="col-md-12" id="namelegalperson">
     <label for="name-legal-representative"><span style="color: red !important;">*</span> <b>Apellidos y Nombres Completos del Representate Legal</b></label>
