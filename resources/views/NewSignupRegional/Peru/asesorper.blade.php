@@ -91,6 +91,7 @@
             divnumaccount.removeAttribute('hidden',true);
             divcci.setAttribute('hidden',true);
             $('#type_Account').empty();
+            $('#type_Account').append($('<option>').val('').text('Selecciona una opción'));
             $('#type_Account').append($('<option>').val('5').text('Ahorros'));
             $('#type_Account').append($('<option>').val('6').text('Corriente'));
 
