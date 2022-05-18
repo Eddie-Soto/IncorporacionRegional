@@ -108,10 +108,10 @@
         var num_cuenta = document.getElementById('number_account');
         var banco=document.getElementById('bank_name').value;
             if (banco == 46) {
-               if ($typeaccount == 5) {
+               if (typeaccount == 5) {
                     num_cuenta.maxLength = "14";
                     num_cuenta.minLength = "14";
-               }else if($typeaccount == 6){
+               }else if(typeaccount == 6){
                     num_cuenta.maxLength = "13";
                     num_cuenta.minLength = "13";
                }
