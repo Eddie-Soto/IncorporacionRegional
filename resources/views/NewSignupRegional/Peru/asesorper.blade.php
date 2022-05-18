@@ -90,7 +90,7 @@
         if (banco == 46) {
             divnumaccount.removeAttribute('hidden',true);
             divcci.setAttribute('hidden',true);
-            $('#type_Account').remove();
+            $('#type_Account').empty();
             $('#type_Account').append($('<option>').val('5').text('Ahorros'));
             $('#type_Account').append($('<option>').val('6').text('Corriente'));
 
@@ -98,7 +98,7 @@
             divcci.removeAttribute('hidden',true);
             divnumaccount.setAttribute('hidden',true);
 
-            $('#type_Account').remove();
+            $('#type_Account').empty();
             $('#type_Account').append($('<option>').val('10').text('Interbancaria'));
             
         }
