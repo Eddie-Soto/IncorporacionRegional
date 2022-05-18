@@ -26,12 +26,9 @@
 
     <div class="col-md-6" id="">
         <label for="type_Account"> <b>TIPO DE CUENTA</b></label>
-        <select id="type_Account" name="type_Account" class="form-control" onchange="ValidateBanks();">
+        <select id="type_Account" name="type_Account" class="form-control" onchange="ValidateBanks(this.value);">
             <option value="">{{ __('auth.selbankname') }}</option>
-            <option value="5">Ahorros</option>
-            <option value="6">Corriente</option>
-            <option value="17">Maestra</option>
-            <option value="10">Interbancaria</option>
+            
         </select>
     </div>
     
@@ -82,6 +79,10 @@
 <br>
 
 <script type="text/javascript">
+
+    
+  
+
     function bank(banco){
         var divnumaccount = document.getElementById('numberaccount');
         var divcci = document.getElementById('cci');
@@ -89,31 +90,34 @@
         if (banco == 46) {
             divnumaccount.removeAttribute('hidden',true);
             divcci.setAttribute('hidden',true);
+            $('#type_Account').remove();
+            $('#type_Account').append($('<option>').val('5').text('Ahorros'));
+            $('#type_Account').append($('<option>').val('6').text('Corriente'));
+
         }else{
             divcci.removeAttribute('hidden',true);
             divnumaccount.setAttribute('hidden',true);
+
+            $('#type_Account').remove();
+            $('#type_Account').append($('<option>').val('10').text('Interbancaria'));
             
         }
 
     }
-    function ValidateBanks(){
-        var banco=document.getElementById('bank_name').value;
-       // alert(banco);
-        
+    function ValidateBanks(typeaccount){
         var num_cuenta = document.getElementById('number_account');
-        var type_acount = document.getElementById('type_Account');
-        alert(type_acount);
-        if (banco == 46) {
-            if (type_acount == 5) {
-                num_cuenta.maxLength = "14";
-                
-            }else if(type_acount == 10){
-                num_cuenta.maxLength = "20";
+        var banco=document.getElementById('bank_name').value;
+            if (banco == 46) {
+               if ($typeaccount == 5) {
+                    num_cuenta.maxLength = "14";
+                    num_cuenta.minLength = "14";
+               }else if($typeaccount == 6){
+                    num_cuenta.maxLength = "13";
+                    num_cuenta.minLength = "13";
+               }
             }else{
-                num_cuenta.maxLength = "13";
+                num_cuenta.maxLength = "20";
+                num_cuenta.minLength = "20";
             }
-
-            
-        }
     }
 </script>
