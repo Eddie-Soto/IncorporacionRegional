@@ -43,7 +43,7 @@ $( document ).ready(function() {
                 maxlength: 100,
                 caract_special_es: true
             },
-            numberdocument{
+            numberdocument: {
                 required: true,
                 minlength: 8,
                 caract_special_es: true
@@ -202,7 +202,7 @@ $( document ).ready(function() {
                 maxlength: "Solo puede colocar hasta 100 caracteres en este campo",
                 caract_special_es: "No se permiten caracteres especiales"
             },
-            numberdocument{
+            numberdocument: {
                 required: "Este campo es obligatorio",
                 maxlength: "Se deben colocar por lo menos 8 caracteres en este campo",
                 caract_special_es: "No se permiten caracteres especiales"
