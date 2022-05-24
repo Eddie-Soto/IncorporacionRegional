@@ -569,7 +569,7 @@ function check_bank(){
   else if(!$("input[id='info_bank']").is(':checked')){
     document.getElementById('check_bank').setAttribute('hidden',true);
     document.getElementById('bank_name').value="";
-    document.getElementById('type_acount').value="";
+    document.getElementById('type_Account').value="";
     document.getElementById('number_account').value="";
 
   }
