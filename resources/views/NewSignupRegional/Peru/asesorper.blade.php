@@ -115,14 +115,14 @@
             if (banco == 46) {
                if (typeaccount == 5) {
                     num_cuenta.setAttribute('minlength', '14');
-                    num_cuenta.setAttribute('minlength', '14');
+                    num_cuenta.setAttribute('maxlength', '14');
                }else if(typeaccount == 6){
                     num_cuenta.setAttribute('minlength', '13');
-                    num_cuenta.setAttribute('minlength', '13');
+                    num_cuenta.setAttribute('maxlength', '13');
                }
             }else{
                 num_cuenta.setAttribute('minlength', '20');
-                num_cuenta.setAttribute('minlength', '20');
+                num_cuenta.setAttribute('maxlength', '20');
             }
     }
 </script>
