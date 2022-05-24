@@ -72,7 +72,7 @@
 
     <div class="col-md-12">
         <label for="numer_document_cotitular"><span style="color: red !important;">*</span> <b>DNI:</b></label>
-        <input type="text" id="numer_document_cotitular" name="numer_document_cotitular" class="form-control">
+        <input type="text" id="numer_document_cotitular" name="numer_document_cotitular" minlength="8" maxlength="8" class="form-control">
     </div>
 
 </div>
@@ -107,8 +107,11 @@
 
     }
     function ValidateBanks(typeaccount){
+
         var num_cuenta = document.getElementById('number_account');
         var banco=document.getElementById('bank_name').value;
+        num_cuenta.removeAttribute('maxLength');
+      num_cuenta.removeAttribute('minLength');
             if (banco == 46) {
                if (typeaccount == 5) {
                     num_cuenta.maxLength = "14";
