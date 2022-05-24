@@ -137,7 +137,7 @@ $( document ).ready(function() {
             },
             number_account: {
                 required: true,
-                maxlength: 20,
+                //maxlength: 20,
                 number: true,
                 caract_special_es: true
             },
@@ -297,7 +297,7 @@ $( document ).ready(function() {
             },
             number_account: {
                 required: "Este campo es obligatorio",
-                maxlength: "Solo puede colocar hasta 20 caracteres en este campo",
+              //  maxlength: "Solo puede colocar hasta 20 caracteres en este campo",
                 number: "Este campo es numerico",
                 caract_special_es: "No se permiten caracteres especiales"
             },
