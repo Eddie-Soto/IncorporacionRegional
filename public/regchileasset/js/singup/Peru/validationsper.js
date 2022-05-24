@@ -204,7 +204,7 @@ $( document ).ready(function() {
             },
             numberdocument: {
                 required: "Este campo es obligatorio",
-                maxlength: "Se deben colocar por lo menos 8 caracteres en este campo",
+                minlength: "Se deben colocar por lo menos 8 caracteres en este campo",
                 caract_special_es: "No se permiten caracteres especiales"
             },
             name_titular_ape: {
