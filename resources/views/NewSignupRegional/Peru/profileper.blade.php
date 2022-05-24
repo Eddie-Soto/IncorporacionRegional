@@ -279,7 +279,7 @@ NIKKEN.</div>
 </div>
 <div class="col-md-6" id="rut_natural">
     <label for="numberdocument"><span style="color: red !important;">*</span> <b>Número de Documento</b></label>
-    <input type="text" id="numberdocument" name="numberdocument" minlength="8" maxlength="11" class="form-control">
+    <input type="text" id="numberdocument" name="numberdocument" class="form-control">
 </div>
 <div class="col-md-12" id="namelegalperson">
     <label for="name-legal-representative"><span style="color: red !important;">*</span> <b>Apellidos y Nombres Completos del Representate Legal</b></label>
@@ -481,7 +481,7 @@ NIKKEN.</div>
     function ValidateNumberDocuments(type_document){
       var number_document=document.getElementById('numberdocument');
         if (type_document == 3) {
-            number_document.minlength = "8";
+            number_document.minLength = "8";
             number_document.maxLength = "8";
         }else{
             number_document.minLength = "11";
