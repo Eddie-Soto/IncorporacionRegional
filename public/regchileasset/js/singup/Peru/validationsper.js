@@ -132,9 +132,9 @@ $( document ).ready(function() {
             declare: {
                 required: true
             },
-            type_acount: {
+           /* type_acount: {
                 required: true
-            },
+            },*/
             number_account: {
                 required: true,
                 //maxlength: 20,
@@ -292,9 +292,9 @@ $( document ).ready(function() {
             declare: {
                 required: "Este campo es obligatorio"
             },
-            type_acount: {
+            /*type_acount: {
                 required: "Este campo es obligatorio"
-            },
+            },*/
             number_account: {
                 required: "Este campo es obligatorio",
               //  maxlength: "Solo puede colocar hasta 20 caracteres en este campo",
