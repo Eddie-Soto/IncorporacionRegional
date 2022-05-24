@@ -114,15 +114,15 @@
       num_cuenta.removeAttribute('minLength');
             if (banco == 46) {
                if (typeaccount == 5) {
-                    num_cuenta.maxLength = "14";
-                    num_cuenta.minLength = "14";
+                    num_cuenta.setAttribute('minlength', '14');
+                    num_cuenta.setAttribute('minlength', '14');
                }else if(typeaccount == 6){
-                    num_cuenta.maxLength = "13";
-                    num_cuenta.minLength = "13";
+                    num_cuenta.setAttribute('minlength', '13');
+                    num_cuenta.setAttribute('minlength', '13');
                }
             }else{
-                num_cuenta.maxLength = "20";
-                num_cuenta.minLength = "20";
+                num_cuenta.setAttribute('minlength', '20');
+                num_cuenta.setAttribute('minlength', '20');
             }
     }
 </script>
