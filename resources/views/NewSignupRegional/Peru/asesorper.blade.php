@@ -100,6 +100,7 @@
             divnumaccount.setAttribute('hidden',true);
 
             $('#type_Account').empty();
+            $('#type_Account').append($('<option>').val('').text('Selecciona una opción'));
             $('#type_Account').append($('<option>').val('10').text('Interbancaria'));
             
         }

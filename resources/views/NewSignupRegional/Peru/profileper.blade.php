@@ -272,7 +272,7 @@ NIKKEN.</div>
 <div class="row">
     <div class="col-md-6" id="typedocuments">
       <label for="typedocument"><span style="color: red !important;">*</span> <b>Tipo de Documento:</b></label>
-      <select id="typedocument" name="typedocument" class="form-control" >
+      <select id="typedocument" name="typedocument" class="form-control" onchange="ValidateNumberDocuments(this.value);" >
         <option value="">Selecciona Tu Documento</option>
         
     </select>
@@ -478,7 +478,17 @@ NIKKEN.</div>
 
 
 <script type="text/javascript">
+    function ValidateNumberDocuments(type_document){
+        number_document=document.getElementById('numberdocument');
+        if (type_document == 3) {
+            number_document.minLength = "8";
+            number_document.maxLength = "8";
+        }else{
+            number_document.minLength = "11";
+            number_document.maxLength = "11";
+        }
 
+    }
 /**
 * Función que muestra los campos dependiendo el tipo de incorporación
 */
