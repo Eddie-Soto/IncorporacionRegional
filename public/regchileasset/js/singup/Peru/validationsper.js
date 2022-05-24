@@ -43,6 +43,11 @@ $( document ).ready(function() {
                 maxlength: 100,
                 caract_special_es: true
             },
+            numberdocument{
+                required: true,
+                minlength: 8,
+                caract_special_es: true
+            },
             name_titular_ape: {
                 required: true,
                 maxlength: 100,
@@ -195,6 +200,11 @@ $( document ).ready(function() {
             name_titular: {
                 required: "Este campo es obligatorio",
                 maxlength: "Solo puede colocar hasta 100 caracteres en este campo",
+                caract_special_es: "No se permiten caracteres especiales"
+            },
+            numberdocument{
+                required: "Este campo es obligatorio",
+                maxlength: "Se deben colocar por lo menos 8 caracteres en este campo",
                 caract_special_es: "No se permiten caracteres especiales"
             },
             name_titular_ape: {
