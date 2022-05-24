@@ -45,7 +45,7 @@ $( document ).ready(function() {
             },
             numberdocument: {
                 required: true,
-                minlength: 8,
+                minLength: 8,
                 caract_special_es: true
             },
             name_titular_ape: {
