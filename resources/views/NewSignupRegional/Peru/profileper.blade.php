@@ -481,11 +481,11 @@ NIKKEN.</div>
     function ValidateNumberDocuments(type_document){
       var number_document=document.getElementById('numberdocument');
         if (type_document == 3) {
-            number_document.minLength = "8";
-            number_document.maxLength = "8";
+            number_document.setAttribute('minlength', '8');
+            number_document.setAttribute('maxlength', '8');
         }else{
-            number_document.minLength = "11";
-            number_document.maxLength = "11";
+            number_document.setAttribute('minlength', '11');
+            number_document.setAttribute('maxlength', '11');
         }
 
     }
