@@ -39,7 +39,7 @@
 
     <div class="col-md-6" id="cci">
         <label for="number_account"><span style="color: red !important;">*</span> <b>CCI:</b></label>
-        <input type="text" id="number_account" name="number_account" class="form-control">
+        <input type="text" id="number_account" minlength="20" maxlength="20" name="number_account" class="form-control">
     </div>
 
 </div>
