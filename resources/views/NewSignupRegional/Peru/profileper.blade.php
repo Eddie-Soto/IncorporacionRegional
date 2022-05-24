@@ -480,6 +480,8 @@ NIKKEN.</div>
 <script type="text/javascript">
     function ValidateNumberDocuments(type_document){
       var number_document=document.getElementById('numberdocument');
+      number_document.removeAttribute('minlength');
+      number_document.removeAttribute('maxlength');
         if (type_document == 3) {
             number_document.setAttribute('minlength', '8');
             number_document.setAttribute('maxlength', '8');
