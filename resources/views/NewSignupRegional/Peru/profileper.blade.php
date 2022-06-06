@@ -70,7 +70,7 @@
     <!--CAMBIO MENSAJE CHILE-->
     <div class="row">
         <div class="col-md-12" id="cborabitxt">
-            <div class='alert alert-info' role='alert'>Corregir la descripción: Si has seleccionado ASESOR DE BIENESTAR, te interesa
+            <div class='alert alert-info' role='alert'>Si has seleccionado ASESOR DE BIENESTAR, te interesa
 compartir el concepto de bienestar y obtener beneficios desarrollando el negocio
 NIKKEN.</div>
         </div>
@@ -502,7 +502,7 @@ function cl_or_abi(value){
         document.getElementById('show-playeras').removeAttribute('hidden',true);
         document.getElementById('shirt-sample').removeAttribute('hidden',true);
         document.getElementById('kits-cb').setAttribute('hidden',true);
-        div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Corregir la descripción: Si has seleccionado ASESOR DE BIENESTAR, te interesa compartir el concepto de bienestar y obtener beneficios desarrollando el negocio NIKKEN.</div>";
+        div_texto_club_or_abi.innerHTML = "<div class='alert alert-info' role='alert'>Si has seleccionado ASESOR DE BIENESTAR, te interesa compartir el concepto de bienestar y obtener beneficios desarrollando el negocio NIKKEN.</div>";
 
     }else if(value == "0"){
         document.getElementById('abi').removeAttribute('hidden',true);
