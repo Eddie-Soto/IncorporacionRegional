@@ -86,7 +86,7 @@ class SignupRegionalController extends Controller
         $codigo=$request->code;
 
         $conection = \DB::connection('mysql_las');
-/*
+        /*
         $consulta= $conection->table('nikkenla_marketing.control_ci_test')
             ->select('nombre as nombre','codigo AS codigo')
             ->where('codigo','LIKE',"%$codigo%")
@@ -96,7 +96,7 @@ class SignupRegionalController extends Controller
             ->toSql();
 
             echo($consulta);
-*/
+        */
             
             $consulta = $conection->select("SELECT  nombre,codigo  FROM nikkenla_marketing.control_ci where estatus = '1' and b1 = '1' and codigo like '%$codigo%' or nombre like '%$codigo%'and estatus = '1' and b1 = '1' or codigo = '$codigo' and estatus = '1' and b1 = '1' or nombre = '$codigo' and estatus = 1 and b1 = 1 LIMIT 3");
 
@@ -120,22 +120,23 @@ class SignupRegionalController extends Controller
 
 
         }
-public function Codegood(Request $request){
-    $codigo=$request->code;
-
-    $conection = \DB::connection('mysql_las');
     
-    $consulta1 = $conection->select("SELECT  codigo  FROM nikkenla_marketing.control_ci where codigo = '$codigo' and estatus = 1 and b1 = 1");
+    public function Codegood(Request $request){
+        $codigo=$request->code;
 
-    \DB::disconnect('mysql_las');
+        $conection = \DB::connection('mysql_las');
+        
+        $consulta1 = $conection->select("SELECT  codigo  FROM nikkenla_marketing.control_ci where codigo = '$codigo' and estatus = 1 and b1 = 1");
 
-    if($consulta1){
-        echo '0';
+        \DB::disconnect('mysql_las');
+
+        if($consulta1){
+            echo '0';
+        }
+        else{
+            echo '1';
+        }
     }
-    else{
-        echo '1';
-    }
-}
 
         public function searchsponsorValid(Request $request){
             $codigo=$request->code;
@@ -468,7 +469,7 @@ public function storeEcuador(Request $request){
     $titular_name_ape = $request->input('apename').trim("");
     $titular_name=$titular_name.", ".$titular_name_ape;
     $titular_name = strtoupper($titular_name);
-    $titular_name_empresa = $request->input('namelegarrepresentative').trim("");
+    $titular_name_empresa = $request->input('name-legal-representative').trim("");
     $titular_name_empresa = strtoupper($titular_name_empresa);
     $name="";
     
@@ -537,8 +538,9 @@ public function storeEcuador(Request $request){
 
     $ckeck_cotitular = $request->input('info_cotitular').trim("");
     $cotitular_name = $request->input('name_cotitular').trim("");
-    $rut_cotitular = $request->input('rut_cotitular').trim("");
-    
+   // $rut_cotitular = $request->input('rut_cotitular').trim("");
+    $typedocumentcoti = $request->input('typedocumentcoti').trim("");
+    $numer_document_cotitular = $request->input('numer_document_cotitular').trim("");
 
     $conection = \DB::connection('mysql_las');
 
@@ -656,7 +658,7 @@ public function storeEcuador(Request $request){
 
     $conection = \DB::connection('mysql_las');
 
-    $signupfiles = $conection->insert("INSERT INTO nikkenla_incorporation.contracts_test (id_contract, country, code, name, type, type_incorporate, type_sponsor, sponsor, email, cellular, birthday, address, residency_one, residency_two, residency_three, residency_four, name_legal_representative, type_document, number_document, name_cotitular, type_document_cotitular, number_document_cotitular, bank, bank_type, number_account, number_clabe, rfc, ip, browser, gender, kit, playera, talla, verify_digit, separate_name) VALUES ('$id', '$country', '$completecode', '$name', '$type_incorporation', '0', '$type_sponsor', '$sponsor', '$email', '$cel', '$birthdate', '$address', '', '$state', '$city','$colony', '', '$typedocument', '$numberdocument', '', '0', '0', '0', '0', '0', '0', '0', '$ip', '$browser', '$gender', '$kit', '$playera', '$talla', '03', 'name separate')");
+    $signupfiles = $conection->insert("INSERT INTO nikkenla_incorporation.contracts_test (id_contract, country, code, name, type, type_incorporate, type_sponsor, sponsor, email, cellular, birthday, address, residency_one, residency_two, residency_three, residency_four, name_legal_representative, type_document, number_document, name_cotitular, type_document_cotitular, number_document_cotitular, bank, bank_type, number_account, number_clabe, rfc, ip, browser, gender, kit, playera, talla, verify_digit, separate_name) VALUES ('$id', '$country', '$completecode', '$name', '$type_incorporation', '$type_per', '$type_sponsor', '$sponsor', '$email', '$cel', '$birthdate', '$address', '', '$state', '$city','$colony', '$titular_name_empresa', '$typedocument', '$numberdocument','$cotitular_name', '$typedocumentcoti', '$numer_document_cotitular', '$bank_name', '$type_account', '$numer_account', '0', '0', '$ip', '$browser', '$gender', '$kit', '$playera', '$talla', '0', '')");
 
     \DB::disconnect('mysql_las');
 
@@ -771,7 +773,7 @@ public function storePeru(Request $request){
                 }
             }
     $bank_name = $request->input('bank_name').trim("");
-    $type_account = $request->input('type_acount').trim("");
+    $type_account = $request->input('type_Account').trim("");
     if ($bank_name == "" and $type_account == "") {
         $bank_name = 0;
         $type_account = 0;
@@ -785,7 +787,8 @@ public function storePeru(Request $request){
 
 	$ckeck_cotitular = $request->input('info_cotitular').trim("");
     $cotitular_name = $request->input('name_cotitular').trim("");
-    $rut_cotitular = $request->input('rut_cotitular').trim("");
+    $typedocumentcoti = $request->input('typedocumentcoti').trim("");
+    $numer_document_cotitular = $request->input('numer_document_cotitular').trim("");
 	
 
 	$conection = \DB::connection('mysql_las');
@@ -904,7 +907,7 @@ public function storePeru(Request $request){
 
 	$conection = \DB::connection('mysql_las');
 
-	$signupfiles = $conection->insert("INSERT INTO nikkenla_incorporation.contracts_test (id_contract, country, code, name, type, type_incorporate, type_sponsor, sponsor, email, cellular, birthday, address, residency_one, residency_two, residency_three, residency_four, name_legal_representative, type_document, number_document, name_cotitular, type_document_cotitular, number_document_cotitular, bank, bank_type, number_account, number_clabe, rfc, ip, browser, gender, kit, playera, talla, verify_digit, separate_name) VALUES ('$id', '$country', '$completecode', '$name', '$type_incorporation', '0', '$type_sponsor', '$sponsor', '$email', '$cel', '$birthdate', '$address', '', '$state', '$city','$colony', '', '$typedocument', '$numberdocument', '', '0', '0', '0', '0', '0', '0', '0', '$ip', '$browser', '$gender', '$kit', '$playera', '$talla', '03', 'name separate')");
+	$signupfiles = $conection->insert("INSERT INTO nikkenla_incorporation.contracts_test (id_contract, country, code, name, type, type_incorporate, type_sponsor, sponsor, email, cellular, birthday, address, residency_one, residency_two, residency_three, residency_four, name_legal_representative, type_document, number_document, name_cotitular, type_document_cotitular, number_document_cotitular, bank, bank_type, number_account, number_clabe, rfc, ip, browser, gender, kit, playera, talla, verify_digit, separate_name) VALUES ('$id', '$country', '$completecode', '$name', '$type_incorporation', '$type_per', '$type_sponsor', '$sponsor', '$email', '$cel', '$birthdate', '$address', '', '$state', '$city','$colony', '$titular_name_empresa', '$typedocument', '$numberdocument','$cotitular_name', '$typedocumentcoti', '$numer_document_cotitular', '$bank_name', '$type_account', '$numer_account', '0', '0', '$ip', '$browser', '$gender', '$kit', '$playera', '$talla', '03', '')");
 
 	\DB::disconnect('mysql_las');
 
