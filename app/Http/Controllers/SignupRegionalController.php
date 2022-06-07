@@ -540,6 +540,9 @@ public function storeEcuador(Request $request){
     $cotitular_name = $request->input('name_cotitular').trim("");
    // $rut_cotitular = $request->input('rut_cotitular').trim("");
     $typedocumentcoti = $request->input('typedocumentcoti').trim("");
+    if ($typedocumentcoti == "") {
+        $typedocumentcoti = 0;
+    }
     $numer_document_cotitular = $request->input('numer_document_cotitular').trim("");
 
     $conection = \DB::connection('mysql_las');
