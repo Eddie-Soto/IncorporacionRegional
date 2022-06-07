@@ -524,7 +524,7 @@ public function storeEcuador(Request $request){
                 }
             }
     $bank_name = $request->input('bank_name').trim("");
-    $type_account = $request->input('type_acount').trim("");
+    $type_account = $request->input('type_Account').trim("");
     if ($bank_name == "" and $type_account == "") {
         $bank_name = 0;
         $type_account = 0;
@@ -903,7 +903,7 @@ public function storePeru(Request $request){
 	$signupfiles = $conection->select("INSERT INTO  nikkenla_incorporation.signupfiles (sap_code,name,filepath,country_id,created_at) VALUES ('$completecode','$titular_name','$urlscompletes','3','$creacion')");
 
 	\DB::disconnect('mysql_las');
-*/
+    */
 
 	$conection = \DB::connection('mysql_las');
 
