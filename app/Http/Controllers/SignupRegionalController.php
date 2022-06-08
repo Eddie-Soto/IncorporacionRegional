@@ -8,6 +8,7 @@ Use Redirect;
 use \Exception;
 use Aws\S3\S3Client;
 use Aws\S3\S3ClientInterface;
+use Illuminate\Support\Facades\Storage;
 header("Content-Type: text/html;charset=utf-8");
 class SignupRegionalController extends Controller
 {
@@ -586,7 +587,7 @@ public function storeEcuador(Request $request){
 
     $fileone = $request->file('fileone');
     $filetwo = $request->file('filetwo');
-    $filetrhee = $request->file('filetrhee');
+    
 
 
     $urlscompletes='';
@@ -632,23 +633,7 @@ public function storeEcuador(Request $request){
 
     }
 
-    if ($request->hasFile('filetrhee') && $request->filetrhee) {
-
-        $name3 = $filetrhee->getClientOriginalName();
-
-        $path3 = $request->file('filetrhee')->store(
-            SignupRegionalController::S3_SLIDERS_FOLDER,
-            SignupRegionalController::S3_OPTIONS
-        );
-
-                //asi obtienes la url donde se guardo
-        $full_paththree = Storage::disk('s3')->url($path3);
-        $urlscompletes=$full_paththree;
-
-
-
-
-    }
+    
 
 
 
