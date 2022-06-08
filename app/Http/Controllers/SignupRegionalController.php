@@ -11,7 +11,7 @@ use Aws\S3\S3ClientInterface;
 header("Content-Type: text/html;charset=utf-8");
 class SignupRegionalController extends Controller
 {
-	const S3_SLIDERS_FOLDER = 'PER';
+	const S3_SLIDERS_FOLDER = 'IncorporacionRegional';
 	const S3_OPTIONS = ['disk' => 's3', 'visibility' => 'public'];
 
     
@@ -582,7 +582,7 @@ public function storeEcuador(Request $request){
         $user_promotion = $conection->insert("INSERT INTO nikkenla_incorporation.user_promotion_kit_TEST (code_sponsor, code_redeem, kit, status, country_id, code_ticket, created_at) VALUES ('$sponsor','$completecode','$kit','2','10','$boleto','$creacion')");
         \DB::disconnect('mysql_las');
     }
-    /*
+    
 
     $fileone = $request->file('fileone');
     $filetwo = $request->file('filetwo');
@@ -657,7 +657,7 @@ public function storeEcuador(Request $request){
     $signupfiles = $conection->select("INSERT INTO  nikkenla_incorporation.signupfiles (sap_code,name,filepath,country_id,created_at) VALUES ('$completecode','$titular_name','$urlscompletes','3','$creacion')");
 
     \DB::disconnect('mysql_las');
-*/
+        
 
     $conection = \DB::connection('mysql_las');
 
