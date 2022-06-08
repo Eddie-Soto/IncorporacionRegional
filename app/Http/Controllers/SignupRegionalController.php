@@ -790,7 +790,7 @@ public function storePeru(Request $request){
 
 	$ckeck_cotitular = $request->input('info_cotitular').trim("");
     $cotitular_name = $request->input('name_cotitular').trim("");
-    $typedocumentcoti = $request->input('typedocumentcoti').trim("");
+    $typedocumentcoti = 3;
     $numer_document_cotitular = $request->input('numer_document_cotitular').trim("");
 	
 
