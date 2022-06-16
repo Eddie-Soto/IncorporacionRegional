@@ -22,7 +22,13 @@ class SignupRegionalController extends Controller
 		return view('NewSignupRegional.index');
 	}
 
-	public function ecuador(Request $request){
+	public function costarica(Request $request){
+        $language='spa';
+        App::setLocale($language);
+        return view('NewSignupRegional.CostaRica.profilecri');
+    }
+
+    public function ecuador(Request $request){
         $language='spa';
         App::setLocale($language);
         return view('NewSignupRegional.Ecuador.profileecu');
