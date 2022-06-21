@@ -362,7 +362,7 @@ NIKKEN.</div>
 
 <br>
 <section id="abi" hidden="true">
-    @include('NewSignupRegional.Ecuador.asesorecu')
+    @include('NewSignupRegional.CostaRica.asesorcri')
 </section>
 
 <div class="row">
