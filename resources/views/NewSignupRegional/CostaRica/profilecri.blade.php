@@ -172,8 +172,8 @@ NIKKEN.</div>
       <label for="type_per"><span style="color: red !important;">*</span> <b>TIPO DE PERSONA:</b></label>
       <select id="type_per" name="type_per" class="form-control" onchange="getDocuments(); getTypePerson(this.value); ">
         <option value=""></option>
-        <option value="1">Persona natural</option>
-        <option value="0">Empresa</option>
+        <option value="1">Persona Fisica</option>
+        <option value="0">Persona Jurídica</option>
     </select>
 </div>
 
@@ -234,7 +234,7 @@ NIKKEN.</div>
    </div>
 
    <div class="col-md-3">
-        <label for="city"><span style="color: red !important;">*</span> <b>Ciudad:</b></label>
+        <label for="city"><span style="color: red !important;">*</span> <b>Cantón:</b></label>
         <input type="text" name="city" id="city" class="form-control">
         
    </div>
@@ -273,7 +273,7 @@ NIKKEN.</div>
 </div>
 <div class="col-md-6" id="rut_natural">
     <label for="numberdocument"><span style="color: red !important;">*</span> <b>Número de Documento</b></label>
-    <input type="text" id="numberdocument" name="numberdocument" minlength="8" maxlength="13" class="form-control">
+    <input type="text" id="numberdocument" name="numberdocument" minlength="9" maxlength="9" class="form-control">
 </div>
 <div class="col-md-12" id="namelegalperson">
     <label for="name-legal-representative"><span style="color: red !important;">*</span> <b>Apellidos y Nombres Completos del Representate Legal</b></label>

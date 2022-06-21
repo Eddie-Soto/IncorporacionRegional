@@ -39,6 +39,11 @@
         <input type="text" id="number_account" name="number_account" class="form-control">
     </div>
 
+    <div class="col-md-6" id="cedulacratoracount">
+        <label for="cedulacratoracount"><span style="color: red !important;">*</span> <b>Cédula de propietario de cuenta</b></label>
+        <input type="text" id="cedulacratoracount" name="cedulacratoracount" class="form-control">
+    </div>
+
     
 
 </div>
