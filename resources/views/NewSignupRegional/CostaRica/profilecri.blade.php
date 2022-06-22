@@ -61,7 +61,7 @@
             <label for="country"><span style="color: red !important;">*</span> <b>{{ __('auth.country') }}</b></label>
             <select class="form-control" name="country" id="country" readonly="readonly">
                 <option></option>
-                <option value="4" selected readonly="readonly">Ecuador</option>
+                <option value="8" selected readonly="readonly">Costa Rica</option>
             </select>
         </div>
     </div>
