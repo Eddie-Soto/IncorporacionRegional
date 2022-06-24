@@ -32,7 +32,7 @@ class GoogleStorageServiceProvider extends ServiceProvider
                 'projectId' => $config['project-id'],
                 'keyFilePath' => $config['key_file'],
             ]);
-            $bucket = $storageClient->bucket($config['bucket']);
+            $bucket = $storageClient->bucket($config['cmssrc']);
 
             $adapter = new GoogleStorageAdapter($storageClient, $bucket);
 
