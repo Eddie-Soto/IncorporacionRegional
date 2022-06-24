@@ -11,8 +11,7 @@
 |
 */
 
-$disk =  \Storage::disk('cmssrc');
-$disk->put('hola.txt',"hola mundo nikken");
+
 Route::get('/', function () {
     return view('welcome');
 });

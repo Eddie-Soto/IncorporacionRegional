@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        //    App\Providers\GoogleStorageServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -173,8 +174,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        RouteServiceProvider::class,
-        App\Providers\GoogleStorageServiceProvider::class,
+       // RouteServiceProvider::class,
+        //
 
     ],
 
